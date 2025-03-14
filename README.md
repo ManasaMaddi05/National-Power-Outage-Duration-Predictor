@@ -168,7 +168,7 @@ This seems logical as small outages are somewhat easy to monitor, and their time
 
 To determine whether another factor influences this missingness, additional data would be required. For example, if certain utility companies have significantly more missing values than others, it may indicate that reporting procedures vary between providers rather than the missingness being tied directly to outage duration. If we were able to obtain data on which companies recorded each outage and their specific reporting practices, we could assess whether the missingness is instead Missing at Random (MAR) rather than NMAR.  
 
-### Missing Dependency
+### Missingness Dependency
 
 <iframe
   src="assets/anomalylevel_missingness1.html"
