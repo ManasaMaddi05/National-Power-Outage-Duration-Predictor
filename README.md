@@ -18,6 +18,7 @@ How do various environmental, infrastructural, and economic factors impact
 * Columns:
 
 
+<div align="center">
 | **Column**                  | **Description**  |
 |-----------------------------|------------------------------------------------------------|
 | `'YEAR'`                    | Year an outage occurred |
@@ -39,6 +40,8 @@ How do various environmental, infrastructural, and economic factors impact
 | `'AREAPCT_URBAN'` | Percentage of state's land area that is urban |
 | `'OUTAGE.DURATION_HOURS'` | Duration of an outage event (in hours) |
 | `'URBANIZATION'` | Aggregated metric for POPPCT_URBAN, POPDEN_URBAN, and AREAPCT_URBAN |
+
+</div>
 
 ## Data Cleaning and Exploratory Data Analysis
 
@@ -79,12 +82,15 @@ With these steps completed, the dataset was fully cleaned and prepared for furth
 ### 1. Outage Duration by Climate Category  
 One way to explore this data is by grouping outages based on their climate category (cold, warm, normal) and calculating the average outage duration. This helps us determine if climate plays a role in how long outages last.  
 
+<div align="center">
 
 | CLIMATE.CATEGORY   |   OUTAGE.DURATION |
 |:-------------------|------------------:|
 | cold               |           2901.35 |
 | normal             |           2666.11 |
 | warm               |           2837.37 |
+
+</div>
 
 
 ### Explanation  
@@ -97,7 +103,6 @@ From this table, we can see how climate conditions correlate with average outage
 Next, we explore NERC Regions (North American Electric Reliability Corporation regions), which are responsible for grid reliability across different parts of the country. We calculate the mean outage duration and demand loss (in megawatts) per region. 
 
 <div align="center">
-This text is centered.
 
 | NERC.REGION   |   OUTAGE.DURATION |   DEMAND.LOSS.MW |
 |:--------------|------------------:|-----------------:|
