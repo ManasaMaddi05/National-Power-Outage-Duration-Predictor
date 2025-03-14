@@ -170,6 +170,33 @@ To determine whether another factor influences this missingness, additional data
 
 ### Missing Dependency
 
+<iframe
+  src="assets/duration_missingness1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/duration_missingness2.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/anomalylevel_missingness1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/anomalylevel_missingness2.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ## Hypothesis Testing: 
 ## Do Power Outages Last Longer in Cold Climates?
@@ -193,6 +220,13 @@ We calculated the **test statistic**, which is the **difference in mean outage d
 - **P-value:** _________
 
 The histogram below shows the distribution of simulated test statistics under the null hypothesis. The **red vertical line** represents the actual observed difference, while the **blue shaded area** highlights extreme values that contribute to the p-value.
+
+<iframe
+  src="assets/climate_hypothesistest.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ### Conclusion
 
