@@ -74,8 +74,21 @@ With these steps completed, the dataset was fully cleaned and prepared for furth
 
 ### Univariate Analysis
 
+<iframe
+  src="assets/duration_univariate.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 ### Bivariate Analysis
 
+<iframe
+  src="assets/cause_bivariate.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ## Interesting Aggregates
 
@@ -90,6 +103,13 @@ One way to explore this data is by grouping outages based on their climate categ
 | normal             |           2666.11 |
 | warm               |           2837.37 |
 
+
+<iframe
+  src="assets/duration_interesting.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 
 
