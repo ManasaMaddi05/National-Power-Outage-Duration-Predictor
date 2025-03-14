@@ -44,31 +44,32 @@ How do various environmental, infrastructural, and economic factors impact
 
 ### Steps of Data Cleaning
 
-#### **Selecting Relevant Features**  
+### **Data Cleaning and Preparation**
 
-1. Filtering Necessary Columns**  
-We began by removing irrelevant columns and retaining only those essential for our analysis. The selected columns emphasize environmental, infrastructural, and economic factors influencing power outage duration. The final dataset includes:  
+#### **1. Removing Unnecessary Columns and Rows**
+We began by reading the dataset from a CSV file and identifying unnecessary columns and rows that did not contribute to the analysis. The first column was removed as it contained index-like values, and the first four rows were dropped since they contained metadata rather than actual observations. After renaming the columns using the first row of valid data, two additional rows were removed to ensure a clean structure. Finally, the index was reset to maintain a properly formatted DataFrame.
 
-- **General Information**: `YEAR`, `MONTH`, `U.S._STATE`, `NERC.REGION`  
-- **Climate & Environmental Factors**: `CLIMATE.REGION`, `ANOMALY.LEVEL`, `CLIMATE.CATEGORY`  
-- **Outage Event Information**: `OUTAGE.START.DATE`, `OUTAGE.START.TIME`, `OUTAGE.RESTORATION.DATE`, `OUTAGE.RESTORATION.TIME`, `CAUSE.CATEGORY`, `CAUSE.CATEGORY.DETAIL`, `HURRICANE.NAMES`, `OUTAGE.DURATION`, `DEMAND.LOSS.MW`, `CUSTOMERS.AFFECTED`  
-- **Economic & Infrastructure Factors**: `TOTAL.PRICE`, `PC.REALGSP.STATE`, `UTIL.CONTRI`  
-- **Urbanization & Population Density**: `POPULATION`, `POPPCT_URBAN`, `POPDEN_URBAN`, `AREAPCT_URBAN`  
+#### **2. Cleaning and Converting Numerical Columns**
+Next, we addressed numerical columns that were stored as strings. Certain columns contained numeric values formatted with commas or spaces, which needed to be cleaned before analysis. To ensure consistency, we stripped unnecessary spaces, removed commas, and converted these columns to numeric values using `pd.to_numeric()`. This transformation allowed for smooth calculations, visualizations, and further statistical analysis.
 
-2. Converting Outage Duration to Hours**  
-Since `OUTAGE.DURATION` was initially recorded in minutes, we created a new column:  
+#### **3. Selecting Relevant Features**
+Once the data was structured correctly, we selected the most relevant columns for the study. The dataset was filtered to retain key attributes related to environmental, economic, and outage-related factors. This included general information such as `YEAR`, `MONTH`, and `U.S._STATE`, as well as climate-related variables like `CLIMATE.REGION`, `ANOMALY.LEVEL`, and `CLIMATE.CATEGORY`. Outage event details such as `OUTAGE.DURATION`, `CUSTOMERS.AFFECTED`, and `DEMAND.LOSS.MW` were preserved, along with economic indicators and urbanization metrics.
 
+#### **4. Handling Missing Values**
+Handling missing values was a critical step in the cleaning process. Zero values in key columns, including `OUTAGE.DURATION`, `CUSTOMERS.AFFECTED`, and `DEMAND.LOSS.MW`, were replaced with `NaN` to indicate missing data more effectively. Numeric columns were also converted to ensure proper data types, and missing values in climate and economic data (`ANOMALY.LEVEL`, `PC.REALGSP.STATE`, and `TOTAL.PRICE`) were filled using median imputation to maintain a balanced dataset.
 
+#### **5. Feature Engineering**
+To enhance the dataset further, we created two new features that improved interpretability and provided deeper insights:
 
-This conversion simplifies interpretation when analyzing outage severity.
+- **Outage Duration in Hours**: Since `OUTAGE.DURATION` was originally recorded in minutes, we converted it to hours for better analysis. A new column, `OUTAGE.DURATION_HOURS`, was created by dividing the original values by 60. This made it easier to compare outage durations across different locations.
 
-3. Creating New Features**  
-To enhance the dataset, we introduced two new features to capture key patterns:  
+- **Urbanization Score**: Instead of using separate urbanization indicators, we created a composite metric that averaged `POPPCT_URBAN`, `POPDEN_URBAN`, and `AREAPCT_URBAN`. The new `URBANIZATION` feature provided a more comprehensive representation of urban development and its potential impact on power outages.
 
-    1. **Urbanization Metric**:
-        This metric normalizes the percentage of urban population, urban density, and urban land area.  
-    2. **Outage Duration in Hours**: 
-        This metric converts the outage duration into hours for better usability and graphing. 
+With these steps completed, the dataset was fully cleaned and prepared for further exploratory analysis and modeling. The final structured DataFrame is now ready for use, ensuring accuracy and consistency in all subsequent analyses.
+
+```python
+df.head()
+ 
 
 Here are the first five rows of our cleaned dataframe:
 
