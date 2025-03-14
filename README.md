@@ -84,6 +84,7 @@ With these steps completed, the dataset was fully cleaned and prepared for furth
 | normal             |           2666.11 |
 | warm               |           2837.37 |
 
+<br>
 
 
 | NERC.REGION   |   OUTAGE.DURATION |   DEMAND.LOSS.MW |
@@ -93,4 +94,12 @@ With these steps completed, the dataset was fully cleaned and prepared for furth
 | FRCC          |          4271.12  |         1072.6   |
 | FRCC, SERC    |           372     |          nan     |
 | HECO          |           895.333 |          466.667 |
+
+<br>
+
+| CLIMATE.CATEGORY   |   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |
+|:-------------------|--------------------:|------------------------:|---------------------:|------------:|----------------:|-----------------:|--------------------------------:|
+| cold               |              327.5  |                17433    |              709.537 |     259.267 |        2125.91  |          3293.79 |                         637.265 |
+| normal             |             3201.43 |                 7658.82 |              505.442 |     142.176 |        1376.53  |          4082.53 |                         941.018 |
+| warm               |              505    |                22799.7  |              317.767 |     209.833 |         596.231 |          4416.69 |                         494.69  |
 
