@@ -350,9 +350,9 @@ To better understand how our model is making predictions, we use a **confusion m
   frameborder="0"
 ></iframe>
 
-## Fairness Analysis
+## **Fairness Analysis**
 
-## **Group Definitions**
+## Group Definitions
 To evaluate the fairness of our power outage prediction model, we examined whether its performance differs based on urbanization levels. We defined two groups:
 
 - **Group X (High Urbanization):** Outages occurring in states where more than 75% of the population lives in urban areas.
@@ -360,28 +360,28 @@ To evaluate the fairness of our power outage prediction model, we examined wheth
 
 We chose urbanization as a fairness criterion because infrastructure in highly urbanized areas is expected to be more resilient due to better maintenance and resource allocation. If the model is biased, it might perform worse in rural areas where outages tend to be longer and more severe.
 
-## **Evaluation Metric**
+## Evaluation Metric
 We used **accuracy** as the evaluation metric, as our model predicts the duration severity of power outages, making accuracy a natural choice to measure its correctness across different groups.
 
-## **Hypotheses**
+## Hypotheses
 - **Null Hypothesis (H₀):** The model is fair, meaning its accuracy for states with high and low urbanization is roughly the same, and any observed differences are due to random chance.
 - **Alternative Hypothesis (H₁):** The model is unfair, meaning its accuracy for states with low urbanization is significantly lower than for states with high urbanization.
 
-## **Test Statistic**
+## Test Statistic
 The test statistic used in this analysis is the **difference in accuracy** between Group X (high urbanization) and Group Y (low urbanization).
 
-## **Significance Level**
+## Significance Level
 We set the significance level at **0.05**.
 
-## **Results**
+## Results
 - **Observed Test Statistic:** The observed difference in mean prediction accuracy between the two groups was **-0.122**, indicating that the model performed slightly worse for low-urbanization states.
 - **p-value:** After conducting a permutation test with **10,000 iterations**, we obtained a p-value of **0.3928**.
 
-## **Conclusion**
+## Conclusion
 - **Decision:** Since the p-value (**0.3928**) is greater than the significance level (**0.05**), we **fail to reject the null hypothesis**.
 - **Interpretation:** This result suggests that any observed differences in accuracy between high-urbanization areas (Group X) and low-urbanization areas (Group Y) are likely due to random chance. Therefore, we do not have strong evidence to conclude that the model is unfair with respect to urbanization levels.
+<br>
 
-## **Visualization**
 The histogram below illustrates the distribution of test statistics obtained from the permutation test. The red dashed line represents the observed test statistic of **-0.122**, showing that it falls well within the range of random variations.
 
 <iframe
