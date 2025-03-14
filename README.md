@@ -122,3 +122,18 @@ Finally, we analyze outage causes across climate categories. We create a pivot t
 ### Explanation  
 This table helps us understand what causes the most severe outages in each climate type. If severe weather is the biggest factor in cold climates, while equipment failure dominates warm climates, it suggests different mitigation strategies might be needed for different regions.  
 
+
+## Assessment of Missingness
+
+### NMAR Analysis
+
+## NMAR Analysis  
+
+A noticeable pattern in our dataset is that some values in the `OUTAGE.DURATION` column are missing, and this missingness does not appear to be random (NMAR). Specifically, longer outages seem to be more likely to have missing duration values.  
+
+This seems logical as small outages are somewhat easy to monitor, and their timestamps clearly show when the power was lost and restored. However, restoration efforts can be complicated and incremental during prolonged outages brought on by major weather catastrophes, including hurricanes or wildfires. In these cases, utilities may lack a precise timestamp for when power was fully restored across all affected areas. As a result, longer and more severe outages are disproportionately associated with missing data, suggesting that the missingness is **Not Missing at Random (NMAR)**—it is dependent on the very values being measured.  
+
+To determine whether another factor influences this missingness, additional data would be required. For example, if certain utility companies have significantly more missing values than others, it may indicate that reporting procedures vary between providers rather than the missingness being tied directly to outage duration. If we were able to obtain data on which companies recorded each outage and their specific reporting practices, we could assess whether the missingness is instead **Missing at Random (MAR)** rather than NMAR.  
+
+
+
