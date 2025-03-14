@@ -207,10 +207,7 @@ To make predictions, we use the following features:
 6. **URBANIZATION** – A metric that captures urban population density and land area.  
 
 ### **Why These Features?**
-The key to building a **useful prediction model** is ensuring that all the input features are **available at the time of prediction**. That means we’re using **factors that can be observed immediately when an outage begins**, rather than anything that would only be known **after** the fact (such as how long it actually lasted).
-
-By considering climate, economic conditions, and infrastructure factors, this model offers a **data-driven way to predict outage severity in real-time**. If successful, this could help power companies and emergency responders **stay ahead of disruptions** and make smarter, faster decisions when outages occur.
-
+The key to building a **useful prediction model** is ensuring that all the input features are **available at the time of prediction**. That means we’re using **factors that can be observed immediately when an outage begins**, rather than anything that would only be known **after** the fact (such as how long it actually lasted). By considering climate, economic conditions, and infrastructure factors, this model offers a **data-driven way to predict outage severity in real-time**. 
 
 ## Baseline Model
 
