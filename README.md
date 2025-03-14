@@ -339,7 +339,7 @@ This improvement means that our model is now better at correctly predicting the 
 The **log transformation on `CUSTOMERS.AFFECTED`** helped the model **handle extreme values** more effectively, making it easier to generalize across different types of outages. The **polynomial transformation of `PC.REALGSP.STATE`** allowed the model to capture **nonlinear relationships** between economic factors and outage duration. Finally, fine-tuning our hyperparameters ensured that our Random Forest Classifier was **optimized for performance**, leading to a more reliable model overall.  
 
 <iframe
-  src="assets/confusion_matrix.html"
+  src="assets/confusion_final.html"
   width="800"
   height="600"
   frameborder="0"
