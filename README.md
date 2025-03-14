@@ -52,6 +52,36 @@ How do various environmental, infrastructural, and economic factors impact
 |   2015 |       7 | Minnesota    | MRO           | East North Central |             1.2 | warm               |              1740 |               250000 |              250 | severe weather     |               nan |              54431 |         10.43 |          73.27 |           2279 |            2.14 |              29         |        784.803 |
 
 
+### **Selecting Relevant Features**  
+
+#### **Step 1: Filtering Necessary Columns**  
+We began by removing irrelevant columns and retaining only those essential for our analysis. The selected columns emphasize environmental, infrastructural, and economic factors influencing power outage duration. The final dataset includes:  
+
+- **General Information**: `YEAR`, `MONTH`, `U.S._STATE`, `NERC.REGION`  
+- **Climate & Environmental Factors**: `CLIMATE.REGION`, `ANOMALY.LEVEL`, `CLIMATE.CATEGORY`  
+- **Outage Event Information**: `OUTAGE.START.DATE`, `OUTAGE.START.TIME`, `OUTAGE.RESTORATION.DATE`, `OUTAGE.RESTORATION.TIME`, `CAUSE.CATEGORY`, `CAUSE.CATEGORY.DETAIL`, `HURRICANE.NAMES`, `OUTAGE.DURATION`, `DEMAND.LOSS.MW`, `CUSTOMERS.AFFECTED`  
+- **Economic & Infrastructure Factors**: `TOTAL.PRICE`, `PC.REALGSP.STATE`, `UTIL.CONTRI`  
+- **Urbanization & Population Density**: `POPULATION`, `POPPCT_URBAN`, `POPDEN_URBAN`, `AREAPCT_URBAN`  
+
+#### **Step 2: Converting Outage Duration to Hours**  
+Since `OUTAGE.DURATION` was initially recorded in minutes, we created a new column:  
+
+
+
+This conversion simplifies interpretation when analyzing outage severity.
+
+#### **Step 3: Creating New Features**  
+To enhance the dataset, we introduced two new features to capture key patterns:  
+
+1. **Urbanization Metric**:  
+
+
+
+This metric normalizes the percentage of urban population, urban density, and urban land area.  
+
+2. **Outage Duration in Hours**:  
+
+By implementing these steps, we refined our dataset to improve the accuracy and interpretability of our analysis.
 
 
 
