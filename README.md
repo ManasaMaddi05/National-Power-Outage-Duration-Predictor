@@ -124,7 +124,6 @@ Finally, we analyze outage causes across climate categories. We create a pivot t
 
 
 <div align="center">
-This text is centered.
 
 
 | CLIMATE.CATEGORY   |   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |
