@@ -192,29 +192,29 @@ To determine whether another factor influences this missingness, additional data
 
 <iframe
   src="assets/anomalylevel_missingness1.html"
-  width="700"
-  height="450"
+  width="1000"
+  height="600"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="assets/anomalylevel_missingness2.html"
-  width="700"
-  height="450"
+  width="1000"
+  height="600"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="assets/duration_missingness1.html"
-  width="700"
-  height="450"
+  width="1000"
+  height="600"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="assets/duration_missingness2.html"
-  width="700"
-  height="450"
+  width="1000"
+  height="600"
   frameborder="0"
 ></iframe>
 
@@ -243,7 +243,7 @@ The histogram below shows the distribution of simulated test statistics under th
 
 <iframe
   src="assets/climate_hypothesistest.html"
-  width="900"
+  width="1000"
   height="600"
   frameborder="0"
 ></iframe>
