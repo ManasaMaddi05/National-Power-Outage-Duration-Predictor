@@ -326,12 +326,12 @@ We selected these values by running GridSearchCV with **cross-validation (`cv=3`
 #### **How the Final Model Improved Over the Baseline**  
 Our final model performed **better than the baseline model** in every key metric.  
 
-- **Baseline Model Accuracy:** **53.57%**  
-- **Final Model Accuracy:** **58.92%** (**+5.35% improvement**)  
-- **Baseline Macro F1-Score:** **0.43**  
-- **Final Macro F1-Score:** **0.51** (**+0.08 improvement**)  
-- **Baseline Weighted F1-Score:** **0.52**  
-- **Final Weighted F1-Score:** **0.57** (**+0.05 improvement**)  
+| Metric            | Baseline Model | Final Model | Improvement |
+|------------------|---------------|-------------|-------------|
+| **Accuracy**      | 53.57%        | **58.92%**  | +5.35%      |
+| **Macro F1-Score** | 0.43          | **0.51**    | +0.08       |
+| **Weighted F1-Score** | 0.52      | **0.57**    | +0.05       |
+
 
 This improvement means that our model is now better at correctly predicting the **severity level of an outage**, particularly for **underrepresented categories like Moderate and Long outages**. The addition of new features helped the model recognize patterns it previously missed, while hyperparameter tuning ensured that it wasn’t overfitting or underfitting.  
 
