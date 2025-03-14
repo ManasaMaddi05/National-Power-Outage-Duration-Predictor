@@ -76,6 +76,8 @@ With these steps completed, the dataset was fully cleaned and prepared for furth
 
 ### Interesting Aggregates
 
+## 1. Outage Duration by Climate Category  
+One way to explore this data is by grouping outages based on their climate category (cold, warm, normal) and calculating the average outage duration. This helps us determine if climate plays a role in how long outages last.  
 
 
 | CLIMATE.CATEGORY   |   OUTAGE.DURATION |
@@ -84,8 +86,15 @@ With these steps completed, the dataset was fully cleaned and prepared for furth
 | normal             |           2666.11 |
 | warm               |           2837.37 |
 
+
+### Explanation  
+From this table, we can see how climate conditions correlate with average outage duration. If cold climates have significantly longer outages than warm climates, it could suggest that extreme winter conditions make it harder to restore power.  
+
+
 <br>
 
+## 2. Outage Duration and Demand Loss by NERC Region  
+Next, we explore NERC Regions (North American Electric Reliability Corporation regions), which are responsible for grid reliability across different parts of the country. We calculate the mean outage duration and demand loss (in megawatts) per region.  
 
 | NERC.REGION   |   OUTAGE.DURATION |   DEMAND.LOSS.MW |
 |:--------------|------------------:|-----------------:|
@@ -95,11 +104,21 @@ With these steps completed, the dataset was fully cleaned and prepared for furth
 | FRCC, SERC    |           372     |          nan     |
 | HECO          |           895.333 |          466.667 |
 
+### Explanation  
+This table reveals which regions tend to have longer outages and higher demand losses. For example, if some regions experience much longer outages than others, this could indicate differences in infrastructure resilience, emergency response efficiency, or climate conditions.  
+
 <br>
+
+## 3. Cause of Outages by Climate Category  
+Finally, we analyze outage causes across climate categories. We create a pivot table that shows the average impact of different outage causes (e.g., equipment failure, severe weather, intentional attack, etc.) in each climate type.  
+
 
 | CLIMATE.CATEGORY   |   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |
 |:-------------------|--------------------:|------------------------:|---------------------:|------------:|----------------:|-----------------:|--------------------------------:|
 | cold               |              327.5  |                17433    |              709.537 |     259.267 |        2125.91  |          3293.79 |                         637.265 |
 | normal             |             3201.43 |                 7658.82 |              505.442 |     142.176 |        1376.53  |          4082.53 |                         941.018 |
 | warm               |              505    |                22799.7  |              317.767 |     209.833 |         596.231 |          4416.69 |                         494.69  |
+
+### Explanation  
+This table helps us understand what causes the most severe outages in each climate type. If severe weather is the biggest factor in cold climates, while equipment failure dominates warm climates, it suggests different mitigation strategies might be needed for different regions.  
 
