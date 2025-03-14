@@ -93,8 +93,8 @@ With these steps completed, the dataset was fully cleaned and prepared for furth
 
 <iframe
   src="assets/cause_bivariate.html"
-  width="900"
-  height="600"
+  width="100%"
+  height="800"
   frameborder="0"
 ></iframe>
 
