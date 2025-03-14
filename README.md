@@ -179,7 +179,38 @@ The histogram below shows the distribution of simulated test statistics under th
 After conducting the permutation test, the **p-value obtained was _______, which is much lower than the specified significance level of 0.05**. Thus, we **reject the null hypothesis** and conclude that there is a **significant difference in outage durations** between cold and warm climates.
 
 
-## Framing a Prediction Problem
+## **Framing a Prediction Problem**
+
+### **Problem Statement**
+In this project, we aim to **predict the severity of power outages** based on key environmental, economic, and outage-related factors. This is a **multiclass classification problem**, where we categorize outages into different severity levels based on **how long they last**.
+
+To make this possible:
+- We divide **OUTAGE.DURATION_HOURS** into four categories: **Short, Moderate, Long, and Severe** based on duration thresholds.
+- Each power outage is assigned one of these labels, allowing us to classify events by severity.
+
+### **Response Variable**
+- **Response Variable:** Outage severity level (**Short, Moderate, Long, Severe**) based on **OUTAGE.DURATION_HOURS**.
+- **Why This Variable?** Outage severity is a **critical factor** in emergency response and disaster planning. If we can predict how long an outage is likely to last, utility companies and emergency teams can **better allocate resources**, prioritize repairs, and **minimize disruptions for affected communities**.
+
+### **Evaluation Metric**
+- **Chosen Metric:** **F1-score**
+- **Why F1-score?** Not all outages are equal—some last just a couple of hours, while others stretch for days. Since we expect an **imbalance** between different outage severities, using **accuracy alone wouldn’t be reliable**. The **F1-score** is a better metric because it balances **precision and recall**, ensuring the model performs well across all severity levels rather than just favoring the most common ones.
+
+### **Features Used for Prediction**
+To make predictions, we use the following features:
+
+1. **CAUSE.CATEGORY** – What caused the outage (e.g., severe weather, equipment failure).  
+2. **NERC.REGION** – The geographical region responsible for managing the grid.  
+3. **CUSTOMERS.AFFECTED** – The number of people impacted by the outage.  
+4. **CLIMATE.CATEGORY** – The climate classification of the affected area.  
+5. **PC.REALGSP.STATE** – The per capita real gross state product (a measure of economic strength).  
+6. **URBANIZATION** – A metric that captures urban population density and land area.  
+
+### **Why These Features?**
+The key to building a **useful prediction model** is ensuring that all the input features are **available at the time of prediction**. That means we’re using **factors that can be observed immediately when an outage begins**, rather than anything that would only be known **after** the fact (such as how long it actually lasted).
+
+By considering climate, economic conditions, and infrastructure factors, this model offers a **data-driven way to predict outage severity in real-time**. If successful, this could help power companies and emergency responders **stay ahead of disruptions** and make smarter, faster decisions when outages occur.
+
 
 ## Baseline Model
 
