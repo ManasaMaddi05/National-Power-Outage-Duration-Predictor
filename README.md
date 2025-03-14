@@ -77,3 +77,20 @@ With these steps completed, the dataset was fully cleaned and prepared for furth
 ### Interesting Aggregates
 
 
+
+| CLIMATE.CATEGORY   |   OUTAGE.DURATION |
+|:-------------------|------------------:|
+| cold               |           2901.35 |
+| normal             |           2666.11 |
+| warm               |           2837.37 |
+
+
+
+| NERC.REGION   |   OUTAGE.DURATION |   DEMAND.LOSS.MW |
+|:--------------|------------------:|-----------------:|
+| ASCC          |           nan     |           35     |
+| ECAR          |          5603.31  |         1314.48  |
+| FRCC          |          4271.12  |         1072.6   |
+| FRCC, SERC    |           372     |          nan     |
+| HECO          |           895.333 |          466.667 |
+
