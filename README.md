@@ -181,28 +181,28 @@ To determine whether another factor influences this missingness, additional data
 <iframe
   src="assets/anomalylevel_missingness1.html"
   width="100%"
-  height="600"
+  height="800"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="assets/anomalylevel_missingness2.html"
-  width="900"
-  height="600"
+  width="100%"
+  height="800"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="assets/duration_missingness1.html"
-  width="900"
-  height="600"
+  width="100%"
+  height="800"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="assets/duration_missingness2.html"
-  width="900"
-  height="600"
+  width="100%"
+  height="800"
   frameborder="0"
 ></iframe>
 
