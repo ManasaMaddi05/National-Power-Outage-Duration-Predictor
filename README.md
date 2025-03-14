@@ -351,3 +351,10 @@ To better understand how our model is making predictions, we use a **confusion m
 ></iframe>
 
 ## Fairness Analysis
+
+<iframe
+  src="assets/parabola_fairness.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
