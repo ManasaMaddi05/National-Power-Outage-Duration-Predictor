@@ -162,26 +162,19 @@ In this analysis, we explore whether power outages tend to last longer in **cold
 - **Null Hypothesis (H₀):** On average, power outages in cold climates last the same amount of time as those in warm climates.  
 - **Alternative Hypothesis (H₁):** On average, power outages in cold climates last longer than those in warm climates.
 
-### How We Tested This
+### How did we test this?
 
 To compare outage durations across climate conditions, we used a **permutation test** with **1,000 simulations**. This approach helps determine whether any observed differences in outage duration happened due to random chance or if they are statistically significant.
 
 We calculated the **test statistic**, which is the **difference in mean outage durations** between cold and warm climate groups. We set our **significance level (α) at 0.05**, meaning that if the probability of obtaining our observed result under the null hypothesis is less than 5%, we will reject the null hypothesis.
 
-### Results:
+### Results
 
-- **Observed Difference in Means (Cold - Warm):** {obs_stat:.4f}  
-- **P-value:** {p_val:.4f}  
+- **Observed Difference in Means (Cold - Warm):** ________
+- **P-value:** _________
 
 The histogram below shows the distribution of simulated test statistics under the null hypothesis. The **red vertical line** represents the actual observed difference, while the **blue shaded area** highlights extreme values that contribute to the p-value.
 
-### Conclusion:
+### Conclusion
 
-Since our **p-value ({p_val:.4f}) is below 0.05**, we **reject the null hypothesis**. This means we have strong evidence to suggest that, on average, power outages **last longer in cold climates** than in warm climates.
-
-This makes sense—cold weather conditions present additional challenges for power restoration. **Ice accumulation on power lines, frozen equipment, and hazardous conditions for repair crews** can significantly delay recovery efforts. These findings highlight the need for **better infrastructure and emergency response plans in colder regions** to improve power restoration times during extreme weather events.
-
-
-
-
-
+After conducting the permutation test, the **p-value obtained was _______, which is much lower than the specified significance level of 0.05**. Thus, we **reject the null hypothesis** and conclude that there is a **significant difference in outage durations** between cold and warm climates.
