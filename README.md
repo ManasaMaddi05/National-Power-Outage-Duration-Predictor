@@ -90,7 +90,7 @@ With these steps completed, the dataset was fully cleaned and prepared for furth
   frameborder="0"
 ></iframe>
 
-## Interesting Aggregates
+### Interesting Aggregates
 
 ### 1. Outage Duration by Climate Category  
 One way to explore this data is by grouping outages based on their climate category (cold, warm, normal) and calculating the average outage duration. This helps us determine if climate plays a role in how long outages last.  
@@ -171,20 +171,6 @@ To determine whether another factor influences this missingness, additional data
 ### Missing Dependency
 
 <iframe
-  src="assets/duration_missingness1.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
-
-<iframe
-  src="assets/duration_missingness2.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
-
-<iframe
   src="assets/anomalylevel_missingness1.html"
   width="800"
   height="600"
@@ -193,6 +179,20 @@ To determine whether another factor influences this missingness, additional data
 
 <iframe
   src="assets/anomalylevel_missingness2.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/duration_missingness1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/duration_missingness2.html"
   width="800"
   height="600"
   frameborder="0"
