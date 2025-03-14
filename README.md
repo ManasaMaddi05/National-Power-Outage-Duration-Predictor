@@ -193,29 +193,29 @@ To figure out if something else is causing this pattern, we’d need more data. 
 
 <iframe
   src="assets/anomalylevel_missingness1.html"
-  width="1000"
-  height="600"
+  width="1050"
+  height="650"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="assets/anomalylevel_missingness2.html"
-  width="1000"
-  height="600"
+  width="1050"
+  height="650"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="assets/duration_missingness1.html"
-  width="1000"
-  height="600"
+  width="1050"
+  height="650"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="assets/duration_missingness2.html"
-  width="1000"
-  height="600"
+  width="1050"
+  height="650"
   frameborder="0"
 ></iframe>
 
