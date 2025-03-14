@@ -151,9 +151,8 @@ To determine whether another factor influences this missingness, additional data
 ### Missing Dependency
 
 
-## Hypothesis Testing
-
-## Hypothesis Testing: Do Power Outages Last Longer in Cold Climates?
+## Hypothesis Testing: 
+## Do Power Outages Last Longer in Cold Climates?
 
 In this analysis, we explore whether power outages tend to last longer in **cold climates** compared to **warm climates**. Understanding how climate affects outage duration is important for improving disaster response strategies and strengthening infrastructure resilience.
 
