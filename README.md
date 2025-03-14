@@ -76,7 +76,7 @@ With these steps completed, the dataset was fully cleaned and prepared for furth
 
 <iframe
   src="assets/duration_univariate.html"
-  width="800"
+  width="900"
   height="600"
   frameborder="0"
 ></iframe>
@@ -85,7 +85,7 @@ With these steps completed, the dataset was fully cleaned and prepared for furth
 
 <iframe
   src="assets/cause_bivariate.html"
-  width="800"
+  width="900"
   height="600"
   frameborder="0"
 ></iframe>
@@ -106,7 +106,7 @@ One way to explore this data is by grouping outages based on their climate categ
 
 <iframe
   src="assets/duration_interesting.html"
-  width="800"
+  width="900"
   height="600"
   frameborder="0"
 ></iframe>
@@ -172,28 +172,28 @@ To determine whether another factor influences this missingness, additional data
 
 <iframe
   src="assets/anomalylevel_missingness1.html"
-  width="800"
+  width="900"
   height="600"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="assets/anomalylevel_missingness2.html"
-  width="800"
+  width="900"
   height="600"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="assets/duration_missingness1.html"
-  width="800"
+  width="900"
   height="600"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="assets/duration_missingness2.html"
-  width="800"
+  width="900"
   height="600"
   frameborder="0"
 ></iframe>
@@ -223,7 +223,7 @@ The histogram below shows the distribution of simulated test statistics under th
 
 <iframe
   src="assets/climate_hypothesistest.html"
-  width="800"
+  width="900"
   height="600"
   frameborder="0"
 ></iframe>
@@ -345,7 +345,7 @@ To better understand how our model is making predictions, we use a **confusion m
 
 <iframe
   src="assets/confusion_final.html"
-  width="800"
+  width="900"
   height="600"
   frameborder="0"
 ></iframe>
@@ -386,7 +386,7 @@ The histogram below illustrates the distribution of test statistics obtained fro
 
 <iframe
   src="assets/parabola_fairness.html"
-  width="800"
+  width="900"
   height="600"
   frameborder="0"
 ></iframe>
