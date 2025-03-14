@@ -94,7 +94,10 @@ From this table, we can see how climate conditions correlate with average outage
 <br>
 
 ### 2. Outage Duration and Demand Loss by NERC Region  
-Next, we explore NERC Regions (North American Electric Reliability Corporation regions), which are responsible for grid reliability across different parts of the country. We calculate the mean outage duration and demand loss (in megawatts) per region.  
+Next, we explore NERC Regions (North American Electric Reliability Corporation regions), which are responsible for grid reliability across different parts of the country. We calculate the mean outage duration and demand loss (in megawatts) per region. 
+
+<div align="center">
+This text is centered.
 
 | NERC.REGION   |   OUTAGE.DURATION |   DEMAND.LOSS.MW |
 |:--------------|------------------:|-----------------:|
@@ -103,6 +106,8 @@ Next, we explore NERC Regions (North American Electric Reliability Corporation r
 | FRCC          |          4271.12  |         1072.6   |
 | FRCC, SERC    |           372     |          nan     |
 | HECO          |           895.333 |          466.667 |
+
+</div>
 
 ### Explanation  
 This table reveals which regions tend to have longer outages and higher demand losses. For example, if some regions experience much longer outages than others, this could indicate differences in infrastructure resilience, emergency response efficiency, or climate conditions.  
@@ -113,11 +118,17 @@ This table reveals which regions tend to have longer outages and higher demand l
 Finally, we analyze outage causes across climate categories. We create a pivot table that shows the average impact of different outage causes (e.g., equipment failure, severe weather, intentional attack, etc.) in each climate type.  
 
 
+<div align="center">
+This text is centered.
+
+
 | CLIMATE.CATEGORY   |   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |
 |:-------------------|--------------------:|------------------------:|---------------------:|------------:|----------------:|-----------------:|--------------------------------:|
 | cold               |              327.5  |                17433    |              709.537 |     259.267 |        2125.91  |          3293.79 |                         637.265 |
 | normal             |             3201.43 |                 7658.82 |              505.442 |     142.176 |        1376.53  |          4082.53 |                         941.018 |
 | warm               |              505    |                22799.7  |              317.767 |     209.833 |         596.231 |          4416.69 |                         494.69  |
+
+</div>
 
 ### Explanation  
 This table helps us understand what causes the most severe outages in each climate type. If severe weather is the biggest factor in cold climates, while equipment failure dominates warm climates, it suggests different mitigation strategies might be needed for different regions.  
@@ -132,6 +143,9 @@ A noticeable pattern in our dataset is that some values in the `OUTAGE.DURATION`
 This seems logical as small outages are somewhat easy to monitor, and their timestamps clearly show when the power was lost and restored. However, restoration efforts can be complicated and incremental during prolonged outages brought on by major weather catastrophes, including hurricanes or wildfires. In these cases, utilities may lack a precise timestamp for when power was fully restored across all affected areas. As a result, longer and more severe outages are disproportionately associated with missing data, suggesting that the missingness is Not Missing at Random (NMAR)—it is dependent on the very values being measured.  
 
 To determine whether another factor influences this missingness, additional data would be required. For example, if certain utility companies have significantly more missing values than others, it may indicate that reporting procedures vary between providers rather than the missingness being tied directly to outage duration. If we were able to obtain data on which companies recorded each outage and their specific reporting practices, we could assess whether the missingness is instead Missing at Random (MAR) rather than NMAR.  
+
+### Missing Dependency
+
 
 
 
