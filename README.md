@@ -43,6 +43,14 @@ How do various environmental, infrastructural, and economic factors impact
 
 ## Data Cleaning and EDA
 
+|   YEAR |   MONTH | U.S._STATE   | NERC.REGION   | CLIMATE.REGION     |   ANOMALY.LEVEL | CLIMATE.CATEGORY   |   OUTAGE.DURATION |   CUSTOMERS.AFFECTED |   DEMAND.LOSS.MW | CAUSE.CATEGORY     |   HURRICANE.NAMES |   PC.REALGSP.STATE |   TOTAL.PRICE |   POPPCT_URBAN |   POPDEN_URBAN |   AREAPCT_URBAN |   OUTAGE.DURATION_HOURS |   URBANIZATION |
+|-------:|--------:|:-------------|:--------------|:-------------------|----------------:|:-------------------|------------------:|---------------------:|-----------------:|:-------------------|------------------:|-------------------:|--------------:|---------------:|---------------:|----------------:|------------------------:|---------------:|
+|   2011 |       7 | Minnesota    | MRO           | East North Central |            -0.3 | normal             |              3060 |                70000 |              nan | severe weather     |               nan |              51268 |          9.28 |          73.27 |           2279 |            2.14 |              51         |        784.803 |
+|   2014 |       5 | Minnesota    | MRO           | East North Central |            -0.1 | normal             |                 1 |                  nan |              nan | intentional attack |               nan |              53499 |          9.28 |          73.27 |           2279 |            2.14 |               0.0166667 |        784.803 |
+|   2010 |      10 | Minnesota    | MRO           | East North Central |            -1.5 | cold               |              3000 |                70000 |              nan | severe weather     |               nan |              50447 |          8.15 |          73.27 |           2279 |            2.14 |              50         |        784.803 |
+|   2012 |       6 | Minnesota    | MRO           | East North Central |            -0.1 | normal             |              2550 |                68200 |              nan | severe weather     |               nan |              51598 |          9.19 |          73.27 |           2279 |            2.14 |              42.5       |        784.803 |
+|   2015 |       7 | Minnesota    | MRO           | East North Central |             1.2 | warm               |              1740 |               250000 |              250 | severe weather     |               nan |              54431 |         10.43 |          73.27 |           2279 |            2.14 |              29         |        784.803 |
+
 
 
 
