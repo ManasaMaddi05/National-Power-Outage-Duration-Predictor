@@ -37,7 +37,11 @@ How do various environmental, infrastructural, and economic factors impact
 | `'POPPCT_URBAN` | Percentage of total state population that is urban |
 | `'POPDEN_URBAN'` | Population density of the urban areas (in persons / sq. mile) |
 | `'AREAPCT_URBAN'` | Percentage of state's land area that is urban |
+| `'OUTAGE.DURATION_HOURS'` | Duration of an outage event (in hours) |
+| `'URBANIZATION'` | Aggregated metric for POPPCT_URBAN, POPDEN_URBAN, and AREAPCT_URBAN |
 
+
+## Data Cleaning and EDA
 
 
 
