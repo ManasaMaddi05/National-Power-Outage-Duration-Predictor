@@ -216,8 +216,8 @@ We calculated the **test statistic**, which is the **difference in mean outage d
 
 ### Results
 
-- **Observed Difference in Means (Cold - Warm):** ________
-- **P-value:** _________
+- **Observed Difference in Means (Cold - Warm):** -2.6727
+- **P-value:** 0.6620
 
 The histogram below shows the distribution of simulated test statistics under the null hypothesis. The **red vertical line** represents the actual observed difference, while the **blue shaded area** highlights extreme values that contribute to the p-value.
 
@@ -230,7 +230,7 @@ The histogram below shows the distribution of simulated test statistics under th
 
 ### Conclusion
 
-After conducting the permutation test, the **p-value obtained was _______, which is much lower than the specified significance level of 0.05**. Thus, we **reject the null hypothesis** and conclude that there is a **significant difference in outage durations** between cold and warm climates.
+After conducting the permutation test, the **p-value obtained was 0.6620, which is much higher than our chosen significance level of 0.05**. Thus, we **fail to reject the null hypothesis**. There is insufficient evidence to conclude that power outages in cold climates tend to last longer than power outages in warm climates.
 
 
 ## **Framing a Prediction Problem**
