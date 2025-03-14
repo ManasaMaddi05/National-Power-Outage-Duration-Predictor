@@ -40,9 +40,13 @@ How do various environmental, infrastructural, and economic factors impact
 | `'OUTAGE.DURATION_HOURS'` | Duration of an outage event (in hours) |
 | `'URBANIZATION'` | Aggregated metric for POPPCT_URBAN, POPDEN_URBAN, and AREAPCT_URBAN |
 
-### **Selecting Relevant Features**  
+## Data Cleaning and Exploratory Data Analysis
 
-#### **Step 1: Filtering Necessary Columns**  
+### Steps of Data Cleaning
+
+#### **Selecting Relevant Features**  
+
+1. Filtering Necessary Columns**  
 We began by removing irrelevant columns and retaining only those essential for our analysis. The selected columns emphasize environmental, infrastructural, and economic factors influencing power outage duration. The final dataset includes:  
 
 - **General Information**: `YEAR`, `MONTH`, `U.S._STATE`, `NERC.REGION`  
@@ -51,29 +55,20 @@ We began by removing irrelevant columns and retaining only those essential for o
 - **Economic & Infrastructure Factors**: `TOTAL.PRICE`, `PC.REALGSP.STATE`, `UTIL.CONTRI`  
 - **Urbanization & Population Density**: `POPULATION`, `POPPCT_URBAN`, `POPDEN_URBAN`, `AREAPCT_URBAN`  
 
-#### **Step 2: Converting Outage Duration to Hours**  
+2. Converting Outage Duration to Hours**  
 Since `OUTAGE.DURATION` was initially recorded in minutes, we created a new column:  
 
 
 
 This conversion simplifies interpretation when analyzing outage severity.
 
-#### **Step 3: Creating New Features**  
+3. Creating New Features**  
 To enhance the dataset, we introduced two new features to capture key patterns:  
 
-1. **Urbanization Metric**:  
-
-
-
-This metric normalizes the percentage of urban population, urban density, and urban land area.  
-
-2. **Outage Duration in Hours**:  
-
-
-## Data Cleaning and Exploratory Data Analysis
-
-### Steps of Data Cleaning
-
+    1. **Urbanization Metric**:
+        This metric normalizes the percentage of urban population, urban density, and urban land area.  
+    2. **Outage Duration in Hours**: 
+        This metric converts the outage duration into hours for better usability and graphing. 
 
 Here are the first five rows of our cleaned dataframe:
 
