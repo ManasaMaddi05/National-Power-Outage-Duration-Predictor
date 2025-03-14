@@ -73,7 +73,7 @@ To enhance the dataset further, we created two new features that improved interp
 
 With these steps completed, the dataset was fully cleaned and prepared for further exploratory analysis and modeling. The final structured DataFrame is now ready for use, ensuring accuracy and consistency in all subsequent analyses.
 
-Here is a preview of our cleaned dataset with the first 5 rows:
+Here is a preview of our cleaned dataset:
 
 |   YEAR |   MONTH | U.S._STATE   | NERC.REGION   | CLIMATE.REGION     |   ANOMALY.LEVEL | CLIMATE.CATEGORY   |   OUTAGE.DURATION |   CUSTOMERS.AFFECTED |   DEMAND.LOSS.MW | CAUSE.CATEGORY     |   HURRICANE.NAMES |   PC.REALGSP.STATE |   TOTAL.PRICE |   POPPCT_URBAN |   POPDEN_URBAN |   AREAPCT_URBAN |   OUTAGE.DURATION_HOURS |   URBANIZATION |
 |-------:|--------:|:-------------|:--------------|:-------------------|----------------:|:-------------------|------------------:|---------------------:|-----------------:|:-------------------|------------------:|-------------------:|--------------:|---------------:|---------------:|----------------:|------------------------:|---------------:|
