@@ -352,8 +352,6 @@ To better understand how our model is making predictions, we use a **confusion m
 
 ## Fairness Analysis
 
-# **Fairness Analysis: Power Outage Prediction Model**
-
 ## **Group Definitions**
 To evaluate the fairness of our power outage prediction model, we examined whether its performance differs based on urbanization levels. We defined two groups:
 
