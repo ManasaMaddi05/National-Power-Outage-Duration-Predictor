@@ -178,3 +178,12 @@ The histogram below shows the distribution of simulated test statistics under th
 ### Conclusion
 
 After conducting the permutation test, the **p-value obtained was _______, which is much lower than the specified significance level of 0.05**. Thus, we **reject the null hypothesis** and conclude that there is a **significant difference in outage durations** between cold and warm climates.
+
+
+## Framing a Prediction Problem
+
+## Baseline Model
+
+## Final Model
+
+## Fairness Analysis
