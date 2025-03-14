@@ -71,40 +71,6 @@ With these steps completed, the dataset was fully cleaned and prepared for furth
 
 ### Univariate Analysis
 
-### **Distribution of Outage Duration (Hours)**
-
-Understanding the distribution of power outage durations helps us analyze how frequently outages of different lengths occur. Below is an interactive histogram created using Plotly, which allows us to visualize the spread of `OUTAGE.DURATION_HOURS`. 
-
-This histogram provides insights into whether outage durations follow a normal distribution, have a right-skewed pattern, or contain significant outliers.
-
-```python
-import pandas as pd
-import plotly.graph_objects as go
-
-# Create an interactive Plotly histogram for OUTAGE.DURATION_HOURS
-fig = go.Figure()
-
-# Add histogram trace
-fig.add_trace(go.Histogram(
-    x=df["OUTAGE.DURATION_HOURS"].dropna(), 
-    nbinsx=30, 
-    opacity=0.7, 
-    name="Outage Duration"
-))
-
-# Update layout for better readability
-fig.update_layout(
-    title="Interactive Distribution of Outage Duration",
-    xaxis_title="Outage Duration (Hours)",
-    yaxis_title="Frequency",
-    template="plotly_white"
-)
-
-# Show interactive Plotly figure
-fig.show()
-
-
-
 ### Bivariate Analysis
 
 
