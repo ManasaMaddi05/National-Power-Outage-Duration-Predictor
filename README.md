@@ -9,9 +9,17 @@ In this project, we are examining a dataset on the major power outages in the Un
 
 ### Research Question
 
-How do various environmental, infrastructural, and economic factors impact 
+How do various environmental, infrastructural, and economic characteristics impact the duration of a power outage?
 
 ### Dataset Significance
+
+Power outages have wide-reaching consequences, affecting everything from public safety to economic productivity and environmental resilience. By analyzing historical data on major U.S. power outages, we can identify key patterns and risk factors that contribute to prolonged outages.
+
+Our research question is particularly relevant because:
+* Public Preparedness: Understanding the factors that cause longer outages allows for an understanding of severe outage-prone areas and for individuals to prepare earlier.
+*
+*
+
 
 ### Dataset Summary
 * Total Rows: 1,534
