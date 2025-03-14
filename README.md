@@ -74,9 +74,9 @@ With these steps completed, the dataset was fully cleaned and prepared for furth
 ### Bivariate Analysis
 
 
-### Interesting Aggregates
+## Interesting Aggregates
 
-## 1. Outage Duration by Climate Category  
+### 1. Outage Duration by Climate Category  
 One way to explore this data is by grouping outages based on their climate category (cold, warm, normal) and calculating the average outage duration. This helps us determine if climate plays a role in how long outages last.  
 
 
@@ -93,7 +93,7 @@ From this table, we can see how climate conditions correlate with average outage
 
 <br>
 
-## 2. Outage Duration and Demand Loss by NERC Region  
+### 2. Outage Duration and Demand Loss by NERC Region  
 Next, we explore NERC Regions (North American Electric Reliability Corporation regions), which are responsible for grid reliability across different parts of the country. We calculate the mean outage duration and demand loss (in megawatts) per region.  
 
 | NERC.REGION   |   OUTAGE.DURATION |   DEMAND.LOSS.MW |
@@ -109,7 +109,7 @@ This table reveals which regions tend to have longer outages and higher demand l
 
 <br>
 
-## 3. Cause of Outages by Climate Category  
+### 3. Cause of Outages by Climate Category  
 Finally, we analyze outage causes across climate categories. We create a pivot table that shows the average impact of different outage causes (e.g., equipment failure, severe weather, intentional attack, etc.) in each climate type.  
 
 
