@@ -16,6 +16,8 @@ How do various environmental, infrastructural, and economic factors impact
 ### Dataset Summary
 * Total Rows: 1,534
 * Columns:
+
+
 | **Column**                  | **Description**  |
 |-----------------------------|------------------------------------------------------------|
 | `'YEAR'`                    | Year an outage occurred |
