@@ -5,7 +5,7 @@ Authors: Lakshmi Manasa Maddi and Rakshan Patnaik
 
 ### Dataset and Project Introduction
 
-In this project, we are examining a dataset on the major power outages in the United States from January 2000 to July 2016. This dataset comes from https://engineering.purdue.edu/LASCI/research-data/outages/outagerisks. According to the Department of Energy, a major outage is classified to be an outage that has impacted atleast 50,000 customers or "caused an unplanned firm load loss atleast 300 MW". The data also contains geographic location, data and time, regional climate information, land-use characteristics, electricity consumption patterms, and the affected states' economic characteristics. We are interested in various relationships, such as the effect of number of affected customers, cause category, regional information, and climate anomalies on the duration of outage.
+In this project, we analyze a dataset documenting major power outages in the United States from January 2000 to July 2016, sourced from Purdue University’s LASCI Research Data (link). According to the U.S. Department of Energy, a major outage is classified as one that impacts at least 50,000 customers or causes an unplanned firm load loss of at least 300 MW. The dataset contains detailed information on each outage, including geographic location, date and time, climate conditions, land-use characteristics, electricity consumption patterns, and economic factors of the affected states. By analyzing these variables, we aim to uncover relationships between key factors—such as the number of affected customers, outage cause, regional climate conditions, and economic characteristics—and the duration of a power outage.
 
 ### Research Question
 
@@ -13,12 +13,7 @@ How do various environmental, infrastructural, and economic characteristics impa
 
 ### Dataset Significance
 
-Power outages have wide-reaching consequences, affecting everything from public safety to economic productivity and environmental resilience. By analyzing historical data on major U.S. power outages, we can identify key patterns and risk factors that contribute to prolonged outages.
-
-Our research question is particularly relevant because:
-* Public Preparedness: Understanding the factors that cause longer outages allows for an understanding of severe outage-prone areas and for individuals to prepare earlier.
-*
-*
+Power outages can have serious consequences, disrupting public safety, economic productivity, and disaster response efforts. Understanding what contributes to prolonged outages allows for better preparation and infrastructure planning. Identifying high-risk areas can help individuals and communities anticipate power disruptions and develop mitigation strategies. Additionally, utility companies and policymakers can use these insights to improve grid resilience, allocate resources efficiently, and reduce recovery times, ultimately ensuring a more stable and reliable power supply. By analyzing historical outage patterns, we can also explore how climate events, urbanization, and economic factors play a role in determining outage duration, providing a more data-driven approach to strengthening the power grid.
 
 
 ### Dataset Summary
@@ -43,7 +38,7 @@ Our research question is particularly relevant because:
 | `'HURRICANE.NAMES'` | Hurricane name (if outage is due to hurricane) |
 | `'PC.REALGSP.STATE'` | Per capita gross state product (GSP) in the US state of the outage |
 | `'TOTAL.PRICE'` | Total electricity consumption in the state of the outage |
-| `'POPPCT_URBAN` | Percentage of total state population that is urban |
+| `'POPPCT_URBAN'` | Percentage of total state population that is urban |
 | `'POPDEN_URBAN'` | Population density of the urban areas (in persons / sq. mile) |
 | `'AREAPCT_URBAN'` | Percentage of state's land area that is urban |
 | `'OUTAGE.DURATION_HOURS'` | Duration of an outage event (in hours) |
@@ -180,29 +175,29 @@ To determine whether another factor influences this missingness, additional data
 
 <iframe
   src="assets/anomalylevel_missingness1.html"
-  width="100%"
-  height="800"
+  width="700"
+  height="450"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="assets/anomalylevel_missingness2.html"
-  width="100%"
-  height="800"
+  width="700"
+  height="450"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="assets/duration_missingness1.html"
-  width="100%"
-  height="800"
+  width="700"
+  height="450"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="assets/duration_missingness2.html"
-  width="100%"
-  height="800"
+  width="700"
+  height="450"
   frameborder="0"
 ></iframe>
 
