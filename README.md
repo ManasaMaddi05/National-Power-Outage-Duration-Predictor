@@ -180,7 +180,7 @@ To determine whether another factor influences this missingness, additional data
 
 <iframe
   src="assets/anomalylevel_missingness1.html"
-  width="900"
+  width="100%"
   height="600"
   frameborder="0"
 ></iframe>
