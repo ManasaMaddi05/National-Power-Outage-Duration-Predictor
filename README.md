@@ -153,6 +153,35 @@ To determine whether another factor influences this missingness, additional data
 
 ## Hypothesis Testing
 
+## Hypothesis Testing: Do Power Outages Last Longer in Cold Climates?
+
+In this analysis, we explore whether power outages tend to last longer in **cold climates** compared to **warm climates**. Understanding how climate affects outage duration is important for improving disaster response strategies and strengthening infrastructure resilience.
+
+### Hypothesis Statement
+
+- **Null Hypothesis (H₀):** On average, power outages in cold climates last the same amount of time as those in warm climates.  
+- **Alternative Hypothesis (H₁):** On average, power outages in cold climates last longer than those in warm climates.
+
+### How We Tested This
+
+To compare outage durations across climate conditions, we used a **permutation test** with **1,000 simulations**. This approach helps determine whether any observed differences in outage duration happened due to random chance or if they are statistically significant.
+
+We calculated the **test statistic**, which is the **difference in mean outage durations** between cold and warm climate groups. We set our **significance level (α) at 0.05**, meaning that if the probability of obtaining our observed result under the null hypothesis is less than 5%, we will reject the null hypothesis.
+
+### Results:
+
+- **Observed Difference in Means (Cold - Warm):** {obs_stat:.4f}  
+- **P-value:** {p_val:.4f}  
+
+The histogram below shows the distribution of simulated test statistics under the null hypothesis. The **red vertical line** represents the actual observed difference, while the **blue shaded area** highlights extreme values that contribute to the p-value.
+
+### Conclusion:
+
+Since our **p-value ({p_val:.4f}) is below 0.05**, we **reject the null hypothesis**. This means we have strong evidence to suggest that, on average, power outages **last longer in cold climates** than in warm climates.
+
+This makes sense—cold weather conditions present additional challenges for power restoration. **Ice accumulation on power lines, frozen equipment, and hazardous conditions for repair crews** can significantly delay recovery efforts. These findings highlight the need for **better infrastructure and emergency response plans in colder regions** to improve power restoration times during extreme weather events.
+
+
 
 
 
