@@ -94,6 +94,10 @@ Here is a preview of our cleaned dataset:
   frameborder="0"
 ></iframe>
 
+The plot below shows the distribution of power outage durations in hours. Most outages are relatively short, with the majority lasting under 50 hours, while only a few extend beyond 100 hours. The distribution is right-skewed, meaning that while long outages do happen, they are much less common. This makes sense since utility companies generally work to restore power as quickly as possible, but some severe outages can last for days due to extreme weather or infrastructure failures. Understanding this distribution helps us see what a "typical" outage looks like and highlights cases where power restoration takes much longer than usual.
+
+
+
 ### Bivariate Analysis
 
 <iframe
@@ -102,6 +106,9 @@ Here is a preview of our cleaned dataset:
   height="800"
   frameborder="0"
 ></iframe>
+
+The plot below shows the relationship between outage duration and cause category. Severe weather is the most common cause of long outages, with many lasting over 200 hours. Fuel supply emergencies and islanding also tend to result in extended outages, though they occur less frequently. On the other hand, outages caused by equipment failures or system operability disruptions are generally much shorter. This suggests that some causes, like extreme weather events or fuel shortages, may be harder to resolve, while technical failures can typically be fixed more quickly. Understanding these trends can help predict how long an outage might last based on its cause.
+
 
 ### Interesting Aggregates
 
