@@ -70,7 +70,12 @@ This metric normalizes the percentage of urban population, urban density, and ur
 2. **Outage Duration in Hours**:  
 
 
-## Data Cleaning and EDA
+## Data Cleaning and Exploratory Data Analysis
+
+### Steps of Data Cleaning
+
+
+Here are the first five rows of our cleaned dataframe:
 
 |   YEAR |   MONTH | U.S._STATE   | NERC.REGION   | CLIMATE.REGION     |   ANOMALY.LEVEL | CLIMATE.CATEGORY   |   OUTAGE.DURATION |   CUSTOMERS.AFFECTED |   DEMAND.LOSS.MW | CAUSE.CATEGORY     |   HURRICANE.NAMES |   PC.REALGSP.STATE |   TOTAL.PRICE |   POPPCT_URBAN |   POPDEN_URBAN |   AREAPCT_URBAN |   OUTAGE.DURATION_HOURS |   URBANIZATION |
 |-------:|--------:|:-------------|:--------------|:-------------------|----------------:|:-------------------|------------------:|---------------------:|-----------------:|:-------------------|------------------:|-------------------:|--------------:|---------------:|---------------:|----------------:|------------------------:|---------------:|
@@ -81,8 +86,14 @@ This metric normalizes the percentage of urban population, urban density, and ur
 |   2015 |       7 | Minnesota    | MRO           | East North Central |             1.2 | warm               |              1740 |               250000 |              250 | severe weather     |               nan |              54431 |         10.43 |          73.27 |           2279 |            2.14 |              29         |        784.803 |
 
 
+### Univariate Analysis
 
 By implementing these steps, we refined our dataset to improve the accuracy and interpretability of our analysis.
 
+
+### Bivariate Analysis
+
+
+### Interesting Aggregates
 
 
