@@ -182,11 +182,12 @@ This table helps us understand what causes the most severe outages in each clima
 
 ### NMAR Analysis
 
-A noticeable pattern in our dataset is that some values in the `OUTAGE.DURATION` column are missing, and this missingness does not appear to be random (NMAR). Specifically, longer outages seem to be more likely to have missing duration values.  
+In our dataset, we noticed that some values in the OUTAGE.DURATION column are missing, and it doesn’t seem random. Specifically, it looks like longer outages are more likely to have missing duration values, which suggests that the missingness is Not Missing at Random (NMAR).
 
-This seems logical as small outages are somewhat easy to monitor, and their timestamps clearly show when the power was lost and restored. However, restoration efforts can be complicated and incremental during prolonged outages brought on by major weather catastrophes, including hurricanes or wildfires. In these cases, utilities may lack a precise timestamp for when power was fully restored across all affected areas. As a result, longer and more severe outages are disproportionately associated with missing data, suggesting that the missingness is Not Missing at Random (NMAR)—it is dependent on the very values being measured.  
+This makes sense because shorter outages are easier to track—there’s a clear start and end time. But for longer outages, especially those caused by major weather events like hurricanes or wildfires, restoration happens in stages, and there might not be a single timestamp marking when power was fully restored everywhere. Since the likelihood of missing data seems to depend on the duration itself, it points to NMAR missingness.
 
-To determine whether another factor influences this missingness, additional data would be required. For example, if certain utility companies have significantly more missing values than others, it may indicate that reporting procedures vary between providers rather than the missingness being tied directly to outage duration. If we were able to obtain data on which companies recorded each outage and their specific reporting practices, we could assess whether the missingness is instead Missing at Random (MAR) rather than NMAR.  
+To figure out if something else is causing this pattern, we’d need more data. For example, if some utility companies have way more missing values than others, it might mean that different companies record outage data differently rather than the missingness actually being tied to outage length. If we had access to details on which companies reported each outage and how they track restorations, we could check if the missingness is actually Missing at Random (MAR) instead of NMAR.
+ 
 
 ### Missingness Dependency
 
