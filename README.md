@@ -1,5 +1,5 @@
 # How Long Will the Darkness Last? 🔦
-Lakshmi Manasa Maddi and Rakshan Patnaik
+Authors: Lakshmi Manasa Maddi and Rakshan Patnaik
 
 ## Introduction
 
