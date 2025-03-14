@@ -301,4 +301,47 @@ Despite the moderate accuracy, the model struggles with classifying **Long** and
 
 ## Final Model
 
+### **Final Model Write-Up**  
+
+#### **Feature Engineering: Why We Added New Features**  
+To improve our model’s ability to predict power outage severity, we introduced two new features that help capture meaningful patterns in the data.  
+
+One key improvement was applying a **log transformation to `CUSTOMERS.AFFECTED`**. The number of people impacted by an outage varies widely, from small-scale outages affecting a few hundred customers to massive events impacting millions. This extreme variation can make it difficult for the model to learn effectively. A **log transformation** helps by scaling down large values while keeping smaller values intact, making it easier for the model to recognize patterns in the data without being overly influenced by extreme outliers.  
+
+We also **added polynomial features for `PC.REALGSP.STATE`**, which represents the per capita real gross state product. This feature gives insight into a state’s economic activity, which may impact how quickly power is restored after an outage. By adding **quadratic terms**, we allowed the model to capture more complex relationships between economic strength and outage duration. For example, in wealthier states, outages might be repaired more efficiently, while in lower-income areas, outages may last longer due to fewer resources. This transformation enables the model to pick up on these subtle trends.  
+
+#### **Modeling Approach and Why We Used It**  
+We kept the **Random Forest Classifier** as our final model because it performed well in the baseline and is highly effective at handling both numerical and categorical features. A **sklearn pipeline** was used to ensure that all preprocessing steps—like feature transformations, scaling, and encoding—were applied consistently and without data leakage. This structured approach ensures the model receives well-prepared data every time it’s trained.  
+
+#### **Hyperparameter Tuning: How We Optimized the Model**  
+To make our final model as effective as possible, we used **GridSearchCV** to systematically test different values for key hyperparameters. These included:  
+
+- **`n_estimators` (number of trees in the forest):** We tested values to find the right balance between model complexity and performance. The best value was **100**.  
+- **`max_depth` (maximum depth of each tree):** A deeper tree can capture more patterns but may overfit. We found **10** to be the best balance.  
+- **`min_samples_split` (minimum samples required to split a node):** This controls how deep the tree grows. We found **2** worked best.  
+- **`min_samples_leaf` (minimum samples required at a leaf node):** This prevents the model from overfitting to small patterns. The best value was **2**.  
+
+We selected these values by running GridSearchCV with **cross-validation (`cv=3`)**, meaning the model was tested on different subsets of the training data to ensure the best parameters were chosen fairly.  
+
+#### **How the Final Model Improved Over the Baseline**  
+Our final model performed **better than the baseline model** in every key metric.  
+
+- **Baseline Model Accuracy:** **53.57%**  
+- **Final Model Accuracy:** **58.92%** (**+5.35% improvement**)  
+- **Baseline Macro F1-Score:** **0.43**  
+- **Final Macro F1-Score:** **0.51** (**+0.08 improvement**)  
+- **Baseline Weighted F1-Score:** **0.52**  
+- **Final Weighted F1-Score:** **0.57** (**+0.05 improvement**)  
+
+This improvement means that our model is now better at correctly predicting the **severity level of an outage**, particularly for **underrepresented categories like Moderate and Long outages**. The addition of new features helped the model recognize patterns it previously missed, while hyperparameter tuning ensured that it wasn’t overfitting or underfitting.  
+
+#### **Why the Final Model Improved**  
+The **log transformation on `CUSTOMERS.AFFECTED`** helped the model **handle extreme values** more effectively, making it easier to generalize across different types of outages. The **polynomial transformation of `PC.REALGSP.STATE`** allowed the model to capture **nonlinear relationships** between economic factors and outage duration. Finally, fine-tuning our hyperparameters ensured that our Random Forest Classifier was **optimized for performance**, leading to a more reliable model overall.  
+
+---
+
+### **Confusion Matrix Code for Final Model**  
+To better understand how our model is making predictions, we use a **confusion matrix**, which shows where the model is getting predictions right and where it's making mistakes.  
+
+
 ## Fairness Analysis
