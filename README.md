@@ -388,7 +388,6 @@ We set the significance level at **0.05**.
 ## Conclusion
 - **Decision:** Since the p-value (**0.3928**) is greater than the significance level (**0.05**), we **fail to reject the null hypothesis**.
 - **Interpretation:** This result suggests that any observed differences in accuracy between high-urbanization areas (Group X) and low-urbanization areas (Group Y) are likely due to random chance. Therefore, we do not have strong evidence to conclude that the model is unfair with respect to urbanization levels.
-<br>
 
 The histogram below illustrates the distribution of test statistics obtained from the permutation test. The red dashed line represents the observed test statistic of **-0.122**, showing that it falls well within the range of random variations.
 
