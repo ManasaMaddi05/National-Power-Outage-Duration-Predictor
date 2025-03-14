@@ -229,7 +229,41 @@ To make predictions, we use the following features:
 ### **Why These Features?**
 The key to building a **useful prediction model** is ensuring that all the input features are **available at the time of prediction**. That means we’re using **factors that can be observed immediately when an outage begins**, rather than anything that would only be known **after** the fact (such as how long it actually lasted). By considering climate, economic conditions, and infrastructure factors, this model offers a **data-driven way to predict outage severity in real-time**. 
 
-## Baseline Model
+
+## **Baseline Model**
+
+#### **Model Description**
+For our baseline model, we developed a multiclass classification model to predict the severity of power outages. The response variable, **OUTAGE.CATEGORY**, categorizes outages into four severity levels: **Short, Moderate, Long, and Severe**. The model was implemented using a **Random Forest Classifier** within an **sklearn pipeline** to streamline preprocessing and training.
+
+#### **Features Used**
+Our model utilizes both **quantitative** and **categorical** features to make predictions.
+
+##### **Quantitative Features:**
+- **CUSTOMERS.AFFECTED** (numerical): The number of customers impacted by the outage.
+- **PC.REALGSP.STATE** (numerical): The per capita real gross state product, representing economic activity.
+- **URBANIZATION** (numerical, derived feature): The level of urbanization, calculated as the mean of three urbanization metrics.
+
+##### **Categorical Features:**
+- **CAUSE.CATEGORY** (nominal, one-hot encoded): The high-level category explaining why the outage occurred (e.g., severe weather, equipment failure).
+- **NERC.REGION** (nominal, one-hot encoded): The North American Electric Reliability Corporation (NERC) region where the outage took place.
+- **CLIMATE.CATEGORY** (nominal, one-hot encoded): The climate classification (cold, warm, or normal) of the region affected by the outage.
+
+#### **Feature Engineering**
+- **One-hot encoding** was applied to categorical variables (**CAUSE.CATEGORY, NERC.REGION, and CLIMATE.CATEGORY**) to transform them into a format suitable for machine learning models.
+- **Missing values** in numeric features were imputed using the median value, while categorical features were filled with a placeholder category ("missing").
+- **Scaling** was performed on numerical features using **StandardScaler** to normalize them before model training.
+
+---
+
+### **Model Performance**
+The baseline model was evaluated using **accuracy** as the primary metric, achieving a score of **53.57%**. Additionally, the classification report provides further insight into the model’s effectiveness:
+
+- **Precision and Recall**: The model performed best at predicting **Severe** outages, with a **precision of 0.72** and **recall of 0.82**. However, performance for **Long** and **Moderate** outages was significantly lower, indicating room for improvement.
+- **Macro Average F1-Score**: **0.43**, suggesting that overall performance varies across categories.
+- **Weighted Average F1-Score**: **0.52**, reflecting the imbalance in class distribution.
+
+Despite the moderate accuracy, the model struggles with classifying **Long** and **Moderate** outages, with **precision and recall both below 0.25** for these categories. Additionally, there were **433 missing values in X_train and 118 in X_test**, suggesting that better handling of missing data may improve results.
+
 
 ## Final Model
 
