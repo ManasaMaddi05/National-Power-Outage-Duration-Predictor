@@ -444,7 +444,7 @@ The histogram below illustrates the distribution of test statistics obtained fro
 
 <iframe
   src="assets/parabola_fairness.html"
-  width="1000"
+  width="1050"
   height="650"
   frameborder="0"
 ></iframe>
