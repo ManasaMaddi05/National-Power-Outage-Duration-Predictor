@@ -319,6 +319,9 @@ The baseline model was evaluated using **accuracy** as the primary metric, achie
 
 Despite the moderate accuracy, the model struggles with classifying **Long** and **Moderate** outages, with **precision and recall both below 0.25** for these categories. Additionally, there were **433 missing values in X_train and 118 in X_test**, suggesting that better handling of missing data may improve results.
 
+### Is the Baseline Model Good?
+Overall, this baseline model is not very strong. While it shows some success in predicting Severe outages, it performs poorly on other outage types and has clear imbalances in precision and recall. This indicates that improvements—such as better handling of missing data, using more advanced modeling techniques, or adjusting for class imbalance—are needed to make it a more reliable predictor.
+
 
 ## Final Model
 
