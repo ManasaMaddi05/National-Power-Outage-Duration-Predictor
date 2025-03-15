@@ -405,7 +405,7 @@ To better understand how our model is making predictions, we use a **confusion m
 <iframe
   src="assets/confusion_final.html"
   width="1150"
-  height="650"
+  height="750"
   frameborder="0"
 ></iframe>
 
