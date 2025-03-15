@@ -379,8 +379,8 @@ To make our final model as effective as possible, we used **GridSearchCV** to sy
 
 We selected these values by running GridSearchCV with **cross-validation (`cv=3`)**, meaning the model was tested on different subsets of the training data to ensure the best parameters were chosen fairly.  
 
-#### How the Final Model Improved Over the Baseline
-Our final model performed **better than the baseline model** in every key metric.  
+#### Did the Final Model Improve Over the Baseline? 
+Yes! Our final model performed **better than the baseline model** in every key metric.  
 
 | Metric            | Baseline Model | Final Model | Improvement |
 |------------------|---------------|-------------|-------------|
