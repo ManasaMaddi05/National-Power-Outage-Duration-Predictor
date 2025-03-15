@@ -323,7 +323,7 @@ Despite the moderate accuracy, the model struggles with classifying **Long** and
 Overall, this baseline model is not very strong. While it shows some success in predicting Severe outages, it performs poorly on other outage types and has clear imbalances in precision and recall. This indicates that improvements—such as better handling of missing data, using more advanced modeling techniques, or adjusting for class imbalance—are needed to make it a more reliable predictor.
 
 
-## Final Model
+## **Final Model**
 
 
 #### **Feature Engineering: Why We Added New Features**  
@@ -373,7 +373,7 @@ To better understand how our model is making predictions, we use a **confusion m
   frameborder="0"
 ></iframe>
 
-## Fairness Analysis
+## **Fairness Analysis**
 
 ## Group Definitions
 To evaluate the fairness of our power outage prediction model, we examined whether its performance differs based on urbanization levels. We defined two groups:
