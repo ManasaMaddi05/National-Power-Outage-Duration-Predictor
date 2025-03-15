@@ -404,7 +404,7 @@ To better understand how our model is making predictions, we use a **confusion m
 
 <iframe
   src="assets/confusion_final.html"
-  width="1050"
+  width="1100"
   height="650"
   frameborder="0"
 ></iframe>
@@ -444,7 +444,7 @@ The histogram below illustrates the distribution of test statistics obtained fro
 
 <iframe
   src="assets/parabola_fairness.html"
-  width="900"
-  height="600"
+  width="1000"
+  height="650"
   frameborder="0"
 ></iframe>
