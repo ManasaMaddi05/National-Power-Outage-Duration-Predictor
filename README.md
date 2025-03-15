@@ -211,7 +211,7 @@ First, let’s look at the distribution of **ANOMALY.LEVEL** when **CUSTOMERS.AF
 #### Results
 
 - **Observed Test Statistic:** 0.0484  
-- **P-value:** After performing 10,000 permutations, we got a p-value of **0.2098**.  
+- **P-value:** After performing 10,000 permutations, we got a p-value of **0.2012**.  
 
 <iframe
   src="assets/anomalylevel_missingness2.html"
@@ -276,7 +276,7 @@ We used the difference in mean outage durations between cold and warm climates a
 ### Results
 
 - **Observed Difference in Means (Cold - Warm):** -2.6727
-- **P-value:** 0.6460
+- **P-value:** 0.6532
 
 The histogram below shows the distribution of simulated test statistics under the null hypothesis. The **red vertical line** represents the actual observed difference, while the **blue shaded area** highlights extreme values that contribute to the p-value.
 
@@ -289,8 +289,7 @@ The histogram below shows the distribution of simulated test statistics under th
 
 ### Conclusion
 
-After conducting the permutation test, the **p-value obtained was 0.6620, which is much higher than our chosen significance level of 0.05**. Thus, we **fail to reject the null hypothesis**. There is insufficient evidence to conclude that power outages in cold climates tend to last longer than power outages in warm climates.
-
+After conducting the permutation test, the **p-value obtained was 0.6532, which is much higher than our chosen significance level of 0.05**. Thus, we **fail to reject the null hypothesis**. There is insufficient evidence to conclude that power outages in cold climates tend to last longer than power outages in warm climates.
 
 ## **Framing a Prediction Problem**
 
@@ -344,13 +343,13 @@ Our model utilizes both **quantitative** and **categorical** features to make pr
 ---
 
 ### **Model Performance**
-The baseline model was evaluated using **accuracy** as the primary metric, achieving a score of **53.42%**. Additionally, the classification report provides further insight into the model’s effectiveness:
+The baseline model was evaluated using **accuracy** as the primary metric, achieving a score of **57.00%**. Additionally, the classification report provides further insight into the model’s effectiveness:
 
-- **Precision and Recall**: The model performed best at predicting **Severe** outages, with a **precision of 0.64** and **recall of 0.75**. However, performance for **Long** and **Moderate** outages was significantly lower, indicating room for improvement.
-- **Macro Average F1-Score**: **0.45**, suggesting that overall performance varies across categories.
-- **Weighted Average F1-Score**: **0.52**, reflecting the imbalance in class distribution.
+- **Precision and Recall**: The model performed best at predicting **Severe** outages, with a **precision of 0.66** and **recall of 0.80**. However, performance for **Long** and **Moderate** outages was significantly lower, indicating room for improvement.
+- **Macro Average F1-Score**: **0.49**, suggesting that overall performance varies across categories.
+- **Weighted Average F1-Score**: **0.55**, reflecting the imbalance in class distribution.
 
-Despite the moderate accuracy, the model struggles with classifying **Long** and **Moderate** outages, with **precision and recall both below 0.25** for these categories. Additionally, there were 6 missing values in X_train and 3 in X_test, suggesting that better handling of missing data may improve results.
+Despite the moderate accuracy, the model struggles with classifying **Long** and **Moderate** outages, with **precision and recall both below 0.45** for these categories. Additionally, there were 8 missing values in X_train and 1 in X_test, suggesting that better handling of missing data may improve results.
 
 ### Is the Baseline Model Good?
 Overall, this baseline model is not very strong. While it shows some success in predicting Severe outages, it performs poorly on other outage types and has clear imbalances in precision and recall. This indicates that improvements—such as better handling of missing data, using more advanced modeling techniques, or adjusting for class imbalance—are needed to make it a more reliable predictor.
@@ -372,10 +371,10 @@ We decided to stick with the **Random Forest Classifier** as our final model bec
 #### Hyperparameter Tuning
 To make our final model as effective as possible, we used **GridSearchCV** to systematically test different values for key hyperparameters. These included:  
 
-- **`n_estimators` (number of trees in the forest):** We tested values to find the right balance between model complexity and performance. The best value was **50**.  
-- **`max_depth` (maximum depth of each tree):** A deeper tree can capture more patterns but may overfit. We found **10** to be the best balance.  
-- **`min_samples_split` (minimum samples required to split a node):** This controls how deep the tree grows. We found **2** worked best.  
-- **`min_samples_leaf` (minimum samples required at a leaf node):** This prevents the model from overfitting to small patterns. The best value was **4**.  
+- **`n_estimators` (number of trees in the forest):** We tested values to find the right balance between model complexity and performance. The best value was **100**.  
+- **`max_depth` (maximum depth of each tree):** A deeper tree can capture more patterns but may overfit. We found **20** to be the best balance.  
+- **`min_samples_split` (minimum samples required to split a node):** This controls how deep the tree grows. We found **5** worked best.  
+- **`min_samples_leaf` (minimum samples required at a leaf node):** This prevents the model from overfitting to small patterns. The best value was **2**.  
 
 We selected these values by running GridSearchCV with **cross-validation (`cv=3`)**, meaning the model was tested on different subsets of the training data to ensure the best parameters were chosen fairly.  
 
@@ -384,9 +383,9 @@ Yes! Our final model performed **better than the baseline model** in accuracy.
 
 | Metric            | Baseline Model | Final Model | Improvement |
 |------------------|---------------|-------------|-------------|
-| **Accuracy**      | 53.42%        | **56.35%**  | +2.93%      |
-| **Macro F1-Score** | 0.45          | **0.43**    | -0.02       |
-| **Weighted F1-Score** | 0.52      | **0.51**    | -0.01       |
+| **Accuracy**      | 57.00%        | **58.31%**  | +1.31%      |
+| **Macro F1-Score** | 0.49          | **0.45**    | -0.04       |
+| **Weighted F1-Score** | 0.55      | **0.54**    | -0.01       |
 
 
 This improvement means that our model is now better at correctly predicting the **severity level of an outage**, particularly for **underrepresented categories like Moderate and Long outages**. The addition of new features helped the model recognize patterns it previously missed, while hyperparameter tuning ensured that it wasn’t overfitting or underfitting.  
@@ -431,10 +430,10 @@ We set the significance level at **0.05**.
 
 ### Results
 - **Observed Test Statistic:** The observed difference in mean prediction accuracy between the two groups was **-0.122**, indicating that the model performed slightly worse for low-urbanization states.
-- **p-value:** After conducting a permutation test with **10,000 iterations**, we obtained a p-value of **0.3928**.
+- **p-value:** After conducting a permutation test with **10,000 iterations**, we obtained a p-value of **0.3595**.
 
 ### Conclusion
-- **Decision:** Since the p-value (**0.3928**) is greater than the significance level (**0.05**), we **fail to reject the null hypothesis**.
+- **Decision:** Since the p-value (**0.3595**) is greater than the significance level (**0.05**), we **fail to reject the null hypothesis**.
 - **Interpretation:** This result suggests that any observed differences in accuracy between high-urbanization areas (Group X) and low-urbanization areas (Group Y) are likely due to random chance. Therefore, we do not have strong evidence to conclude that the model is unfair with respect to urbanization levels.
 
 The histogram below illustrates the distribution of test statistics obtained from the permutation test. The red dashed line represents the observed test statistic of **-0.037**, showing that it falls well within the range of random variations.
