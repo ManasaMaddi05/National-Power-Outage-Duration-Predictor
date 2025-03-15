@@ -190,9 +190,7 @@ This makes sense because shorter outages are easier to track—there’s a clear
 To figure out if something else is causing this pattern, we’d need more data. For example, if some utility companies have way more missing values than others, it might mean that different companies record outage data differently rather than the missingness actually being tied to outage length. If we had access to details on which companies reported each outage and how they track restorations, we could check if the missingness is actually Missing at Random (MAR) instead of NMAR.
  
 
-### Missingness Dependency
-
-# Missingness Dependency Analysis
+### Missingness Dependency Analysis
 
 In this section, we analyzed the missingness dependency of the **CUSTOMERS.AFFECTED** column on the **ANOMALY.LEVEL** and **OUTAGE.DURATION_HOURS** columns.
 
@@ -262,7 +260,8 @@ First, let’s look at the distribution of **OUTAGE.DURATION_HOURS** when **CUST
 
 
 ## **Hypothesis Testing**: 
-## Do Power Outages Last Longer in Cold Climates?
+
+### Do Power Outages Last Longer in Cold Climates?
 
 In this analysis, we explore whether power outages tend to last longer in **cold climates** compared to **warm climates**. Understanding how climate affects outage duration is important for improving disaster response strategies and strengthening infrastructure resilience.
 
@@ -298,17 +297,17 @@ After conducting the permutation test, the **p-value obtained was 0.6620, which 
 
 ## **Framing a Prediction Problem**
 
-### **Problem Statement**
+### Problem Statement
 In this project, we’re trying to **predict how severe a power outage** will be based on different factors like environmental conditions, economic indicators, and outage-related data. Since there are multiple levels of severity, this is a multiclass classification problem where we categorize outages based on how long they last. To do this, we divide **OUTAGE.DURATION_HOURS** into four categories: Short, Moderate, Long, and Severe. Each power outage is assigned one of these labels, allowing us to classify events based on their severity. This makes it easier to analyze and predict how long an outage might last in the future.
 
-### **Response Variable**
+### Response Variable
 Our response variable is the **outage severity level**, which comes from the **OUTAGE.DURATION_HOURS** column. We chose this variable because predicting outage severity is a key factor in emergency response and disaster planning. If we can estimate how long an outage will last, utility companies and emergency teams can allocate resources more efficiently, prioritize repairs, and minimize disruptions for affected communities.
 
-### **Evaluation Metric**
+### Evaluation Metric
 - **Chosen Metric:** **F1-score**
 Not all power outages are the same—some only last a few hours, while others can go on for days. Since some outage severities are likely to happen more often than others, accuracy alone wouldn’t give us a clear picture of how well the model is performing. The F1-score is a better choice because it balances precision and recall, making sure the model doesn’t just focus on the most common outage types but actually performs well across all severity levels
 
-### **Features Used for Prediction**
+### Features Used for Prediction
 To make predictions, we use the following features:
 
 1. **CAUSE.CATEGORY** – What caused the outage (e.g., severe weather, equipment failure).  
@@ -318,7 +317,7 @@ To make predictions, we use the following features:
 5. **PC.REALGSP.STATE** – The per capita real gross state product (a measure of economic strength).  
 6. **URBANIZATION** – A metric that captures urban population density and land area.  
 
-### **Why These Features?**
+### Why These Features?
 The key to building a useful prediction model is ensuring that all the input features are available at the time of prediction. That means we’re using factors that can be observed immediately when an outage begins, rather than anything that would only be known after the fact (such as how long it actually lasted). By considering climate, economic conditions, and infrastructure factors, this model offers a data-driven way to predict outage severity in real-time. 
 
 
