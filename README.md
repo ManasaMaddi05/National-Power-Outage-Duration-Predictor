@@ -2,7 +2,7 @@
 
 Authors: Lakshmi Manasa Maddi and Rakshan Patnaik
 
-## Introduction
+## **Introduction**
 
 ### Dataset and Project Introduction
 
@@ -47,7 +47,7 @@ Power outages can seriously affect public safety, economic output, and disaster 
 
 
 
-## Data Cleaning and Exploratory Data Analysis
+## **Data Cleaning and Exploratory Data Analysis**
 
 ### Steps of Data Cleaning
 
@@ -179,7 +179,7 @@ Finally, we analyze outage causes across climate categories. We create a pivot t
 This table helps us understand what causes the most severe outages in each climate type. If severe weather is the biggest factor in cold climates, while equipment failure dominates warm climates, it suggests different mitigation strategies might be needed for different regions.  
 
 
-## Assessment of Missingness
+## **Assessment of Missingness**
 
 ### NMAR Analysis
 
@@ -261,7 +261,7 @@ First, let’s look at the distribution of **OUTAGE.DURATION_HOURS** when **CUST
 **Conclusion:** At a significance level of **0.05**, we **reject the null hypothesis**. This result indicates that the missingness in the **CUSTOMERS.AFFECTED** column **is dependent** on the **OUTAGE.DURATION_HOURS** column.
 
 
-## Hypothesis Testing: 
+## **Hypothesis Testing**: 
 ## Do Power Outages Last Longer in Cold Climates?
 
 In this analysis, we explore whether power outages tend to last longer in **cold climates** compared to **warm climates**. Understanding how climate affects outage duration is important for improving disaster response strategies and strengthening infrastructure resilience.
