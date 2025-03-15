@@ -298,19 +298,14 @@ After conducting the permutation test, the **p-value obtained was 0.6620, which 
 ## **Framing a Prediction Problem**
 
 ### **Problem Statement**
-In this project, we aim to **predict the severity of power outages** based on key environmental, economic, and outage-related factors. This is a **multiclass classification problem**, where we categorize outages into different severity levels based on **how long they last**.
-
-To make this possible:
-- We divide **OUTAGE.DURATION_HOURS** into four categories: **Short, Moderate, Long, and Severe** based on duration thresholds.
-- Each power outage is assigned one of these labels, allowing us to classify events by severity.
+In this project, we’re trying to **predict how severe a power outage** will be based on different factors like environmental conditions, economic indicators, and outage-related data. Since there are multiple levels of severity, this is a multiclass classification problem where we categorize outages based on how long they last. To do this, we divide **OUTAGE.DURATION_HOURS** into four categories: Short, Moderate, Long, and Severe. Each power outage is assigned one of these labels, allowing us to classify events based on their severity. This makes it easier to analyze and predict how long an outage might last in the future.
 
 ### **Response Variable**
-- **Response Variable:** Outage severity level (**Short, Moderate, Long, Severe**) based on **OUTAGE.DURATION_HOURS**.
-- **Why This Variable?** Outage severity is a **critical factor** in emergency response and disaster planning. If we can predict how long an outage is likely to last, utility companies and emergency teams can **better allocate resources**, prioritize repairs, and **minimize disruptions for affected communities**.
+Our response variable is the **outage severity level**, which comes from the **OUTAGE.DURATION_HOURS** column. We chose this variable because predicting outage severity is a key factor in emergency response and disaster planning. If we can estimate how long an outage will last, utility companies and emergency teams can allocate resources more efficiently, prioritize repairs, and minimize disruptions for affected communities.
 
 ### **Evaluation Metric**
 - **Chosen Metric:** **F1-score**
-- **Why F1-score?** Not all outages are equal—some last just a couple of hours, while others stretch for days. Since we expect an **imbalance** between different outage severities, using **accuracy alone wouldn’t be reliable**. The **F1-score** is a better metric because it balances **precision and recall**, ensuring the model performs well across all severity levels rather than just favoring the most common ones.
+Not all power outages are the same—some only last a few hours, while others can go on for days. Since some outage severities are likely to happen more often than others, accuracy alone wouldn’t give us a clear picture of how well the model is performing. The F1-score is a better choice because it balances precision and recall, making sure the model doesn’t just focus on the most common outage types but actually performs well across all severity levels
 
 ### **Features Used for Prediction**
 To make predictions, we use the following features:
@@ -323,7 +318,7 @@ To make predictions, we use the following features:
 6. **URBANIZATION** – A metric that captures urban population density and land area.  
 
 ### **Why These Features?**
-The key to building a **useful prediction model** is ensuring that all the input features are **available at the time of prediction**. That means we’re using **factors that can be observed immediately when an outage begins**, rather than anything that would only be known **after** the fact (such as how long it actually lasted). By considering climate, economic conditions, and infrastructure factors, this model offers a **data-driven way to predict outage severity in real-time**. 
+The key to building a useful prediction model is ensuring that all the input features are available at the time of prediction. That means we’re using factors that can be observed immediately when an outage begins, rather than anything that would only be known after the fact (such as how long it actually lasted). By considering climate, economic conditions, and infrastructure factors, this model offers a data-driven way to predict outage severity in real-time. 
 
 
 ## **Baseline Model**
@@ -358,7 +353,7 @@ The baseline model was evaluated using **accuracy** as the primary metric, achie
 - **Macro Average F1-Score**: **0.43**, suggesting that overall performance varies across categories.
 - **Weighted Average F1-Score**: **0.52**, reflecting the imbalance in class distribution.
 
-Despite the moderate accuracy, the model struggles with classifying **Long** and **Moderate** outages, with **precision and recall both below 0.25** for these categories. Additionally, there were **433 missing values in X_train and 118 in X_test**, suggesting that better handling of missing data may improve results.
+Despite the moderate accuracy, the model struggles with classifying **Long** and **Moderate** outages, with **precision and recall both below 0.25** for these categories. Additionally, there were 433 missing values in X_train and 118 in X_test, suggesting that better handling of missing data may improve results.
 
 ### Is the Baseline Model Good?
 Overall, this baseline model is not very strong. While it shows some success in predicting Severe outages, it performs poorly on other outage types and has clear imbalances in precision and recall. This indicates that improvements—such as better handling of missing data, using more advanced modeling techniques, or adjusting for class imbalance—are needed to make it a more reliable predictor.
@@ -368,14 +363,14 @@ Overall, this baseline model is not very strong. While it shows some success in 
 
 
 #### **Feature Engineering: Why We Added New Features**  
-To improve our model’s ability to predict power outage severity, we introduced two new features that help capture meaningful patterns in the data.  
+To help our model better predict power outage severity, we added two new features that highlight important patterns in the data.
 
-One key improvement was applying a **log transformation to `CUSTOMERS.AFFECTED`**. The number of people impacted by an outage varies widely, from small-scale outages affecting a few hundred customers to massive events impacting millions. This extreme variation can make it difficult for the model to learn effectively. A **log transformation** helps by scaling down large values while keeping smaller values intact, making it easier for the model to recognize patterns in the data without being overly influenced by extreme outliers.  
+One of the biggest changes we made was applying a log transformation to the **CUSTOMERS.AFFECTED** column. Outages can impact anywhere from a few hundred to millions of people, and this huge difference makes it harder for the model to learn effectively. Without adjustments, really large values could dominate the model, making it less accurate overall. By using a log transformation, we scaled down extreme values while still keeping smaller values meaningful, helping the model recognize patterns without getting thrown off by really large numbers.
 
-We also **added polynomial features for `PC.REALGSP.STATE`**, which represents the per capita real gross state product. This feature gives insight into a state’s economic activity, which may impact how quickly power is restored after an outage. By adding **quadratic terms**, we allowed the model to capture more complex relationships between economic strength and outage duration. For example, in wealthier states, outages might be repaired more efficiently, while in lower-income areas, outages may last longer due to fewer resources. This transformation enables the model to pick up on these subtle trends.  
+We also added polynomial features for PC.REALGSP.STATE, which represents a state’s economic activity. A state's economy might play a role in how quickly power is restored—richer states might have better infrastructure and emergency response, while lower-income areas might struggle with longer outages. By adding **quadratic terms**, we gave the model a chance to capture more complex patterns in the data, making it better at predicting outage duration based on economic conditions..  
 
 #### **Modeling Approach and Why We Used It**  
-We kept the **Random Forest Classifier** as our final model because it performed well in the baseline and is highly effective at handling both numerical and categorical features. A **sklearn pipeline** was used to ensure that all preprocessing steps—like feature transformations, scaling, and encoding—were applied consistently and without data leakage. This structured approach ensures the model receives well-prepared data every time it’s trained.  
+We decided to stick with the **Random Forest Classifier** as our final model because it performed well in our baseline tests and works great with both numerical and categorical data. To make sure all the preprocessing steps were applied correctly, we used an **sklearn pipeline**. This helped us handle things like feature transformations, scaling, and encoding in a way that kept everything consistent and avoided data leakage. By setting it up this way, we made sure the model always gets properly processed data whenever it’s trained. 
 
 #### **Hyperparameter Tuning: How We Optimized the Model**  
 To make our final model as effective as possible, we used **GridSearchCV** to systematically test different values for key hyperparameters. These included:  
