@@ -410,8 +410,8 @@ To better understand how our model is making predictions, we use a **confusion m
 
 <iframe
   src="assets/confusion_final.html"
-  width="900"
-  height="600"
+  width="1050"
+  height="650"
   frameborder="0"
 ></iframe>
 
