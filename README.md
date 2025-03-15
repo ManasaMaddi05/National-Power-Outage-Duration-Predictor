@@ -192,12 +192,31 @@ To figure out if something else is causing this pattern, we’d need more data. 
 
 ### Missingness Dependency
 
+# Missingness Dependency Analysis
+
+In this section, we analyzed the missingness dependency of the **CUSTOMERS.AFFECTED** column on the **ANOMALY.LEVEL** and **OUTAGE.DURATION_HOURS** columns.
+
+## ANOMALY.LEVEL
+
+First, let’s look at the distribution of **ANOMALY.LEVEL** when **CUSTOMERS.AFFECTED** is missing versus not missing.
+
+**Null Hypothesis:** The distribution of **ANOMALY.LEVEL** when **CUSTOMERS.AFFECTED** is missing is the same as when **CUSTOMERS.AFFECTED** is not missing.  
+
+**Alternate Hypothesis:** The distribution of **ANOMALY.LEVEL** when **CUSTOMERS.AFFECTED** is missing differs from when **CUSTOMERS.AFFECTED** is not missing.  
+
+**Test Statistic:** Difference of Means  
+
 <iframe
   src="assets/anomalylevel_missingness1.html"
   width="1050"
   height="650"
   frameborder="0"
 ></iframe>
+
+### Results
+
+- **Observed Test Statistic:** 0.0484  
+- **P-value:** After performing 10,000 permutations, we got a p-value of **0.2098**.  
 
 <iframe
   src="assets/anomalylevel_missingness2.html"
@@ -206,6 +225,20 @@ To figure out if something else is causing this pattern, we’d need more data. 
   frameborder="0"
 ></iframe>
 
+**Conclusion:** At a significance level of **0.05**, we **fail to reject the null hypothesis**. This result indicates that the missingness in the **CUSTOMERS.AFFECTED** column has **no dependency** on the **ANOMALY.LEVEL** column.
+
+---
+
+## OUTAGE.DURATION_HOURS
+
+First, let’s look at the distribution of **OUTAGE.DURATION_HOURS** when **CUSTOMERS.AFFECTED** is missing versus not missing.
+
+**Null Hypothesis:** The distribution of **OUTAGE.DURATION_HOURS** when **CUSTOMERS.AFFECTED** is missing is the same as when **CUSTOMERS.AFFECTED** is not missing.  
+
+**Alternate Hypothesis:** The distribution of **OUTAGE.DURATION_HOURS** when **CUSTOMERS.AFFECTED** is missing differs from when **CUSTOMERS.AFFECTED** is not missing.  
+
+**Test Statistic:** Difference of Means  
+
 <iframe
   src="assets/duration_missingness1.html"
   width="1050"
@@ -213,12 +246,20 @@ To figure out if something else is causing this pattern, we’d need more data. 
   frameborder="0"
 ></iframe>
 
+### Results
+
+- **Observed Test Statistic:** 24.12  
+- **P-value:** After performing 10,000 permutations, we got a p-value of **0.0**.  
+
 <iframe
   src="assets/duration_missingness2.html"
   width="1050"
   height="650"
   frameborder="0"
 ></iframe>
+
+**Conclusion:** At a significance level of **0.05**, we **reject the null hypothesis**. This result indicates that the missingness in the **CUSTOMERS.AFFECTED** column **is dependent** on the **OUTAGE.DURATION_HOURS** column.
+
 
 ## Hypothesis Testing: 
 ## Do Power Outages Last Longer in Cold Climates?
