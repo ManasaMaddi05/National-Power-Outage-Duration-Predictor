@@ -208,7 +208,6 @@ First, let’s look at the distribution of **ANOMALY.LEVEL** when **CUSTOMERS.AF
   height="650"
   frameborder="0"
 ></iframe>
-
 #### Results
 
 - **Observed Test Statistic:** 0.0484  
