@@ -1,5 +1,5 @@
 # How Long Will the Darkness Last? 🔦
-# Data Analysis 
+
 Authors: Lakshmi Manasa Maddi and Rakshan Patnaik
 
 ## Introduction
@@ -405,7 +405,7 @@ To better understand how our model is making predictions, we use a **confusion m
 
 <iframe
   src="assets/confusion_final.html"
-  width="1100"
+  width="1150"
   height="650"
   frameborder="0"
 ></iframe>
