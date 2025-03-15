@@ -192,7 +192,7 @@ To figure out if something else is causing this pattern, we’d need more data. 
 
 In this section, we analyzed the missingness dependency of the **CUSTOMERS.AFFECTED** column on the **ANOMALY.LEVEL** and **OUTAGE.DURATION_HOURS** columns.
 
-#### Dependent Column: ANOMALY.LEVEL
+#### No Dependency Column: ANOMALY.LEVEL
 
 First, let’s look at the distribution of **ANOMALY.LEVEL** when **CUSTOMERS.AFFECTED** is missing versus not missing.
 
@@ -224,7 +224,7 @@ First, let’s look at the distribution of **ANOMALY.LEVEL** when **CUSTOMERS.AF
 
 ---
 
-#### Not Depdendent Column: OUTAGE.DURATION_HOURS
+#### Dependency Column: OUTAGE.DURATION_HOURS
 
 First, let’s look at the distribution of **OUTAGE.DURATION_HOURS** when **CUSTOMERS.AFFECTED** is missing versus not missing.
 
