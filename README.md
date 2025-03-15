@@ -344,13 +344,13 @@ Our model utilizes both **quantitative** and **categorical** features to make pr
 ---
 
 ### **Model Performance**
-The baseline model was evaluated using **accuracy** as the primary metric, achieving a score of **53.57%**. Additionally, the classification report provides further insight into the model’s effectiveness:
+The baseline model was evaluated using **accuracy** as the primary metric, achieving a score of **53.42%**. Additionally, the classification report provides further insight into the model’s effectiveness:
 
-- **Precision and Recall**: The model performed best at predicting **Severe** outages, with a **precision of 0.72** and **recall of 0.82**. However, performance for **Long** and **Moderate** outages was significantly lower, indicating room for improvement.
-- **Macro Average F1-Score**: **0.43**, suggesting that overall performance varies across categories.
+- **Precision and Recall**: The model performed best at predicting **Severe** outages, with a **precision of 0.64** and **recall of 0.75**. However, performance for **Long** and **Moderate** outages was significantly lower, indicating room for improvement.
+- **Macro Average F1-Score**: **0.45**, suggesting that overall performance varies across categories.
 - **Weighted Average F1-Score**: **0.52**, reflecting the imbalance in class distribution.
 
-Despite the moderate accuracy, the model struggles with classifying **Long** and **Moderate** outages, with **precision and recall both below 0.25** for these categories. Additionally, there were 433 missing values in X_train and 118 in X_test, suggesting that better handling of missing data may improve results.
+Despite the moderate accuracy, the model struggles with classifying **Long** and **Moderate** outages, with **precision and recall both below 0.25** for these categories. Additionally, there were 6 missing values in X_train and 3 in X_test, suggesting that better handling of missing data may improve results.
 
 ### Is the Baseline Model Good?
 Overall, this baseline model is not very strong. While it shows some success in predicting Severe outages, it performs poorly on other outage types and has clear imbalances in precision and recall. This indicates that improvements—such as better handling of missing data, using more advanced modeling techniques, or adjusting for class imbalance—are needed to make it a more reliable predictor.
@@ -372,21 +372,21 @@ We decided to stick with the **Random Forest Classifier** as our final model bec
 #### Hyperparameter Tuning
 To make our final model as effective as possible, we used **GridSearchCV** to systematically test different values for key hyperparameters. These included:  
 
-- **`n_estimators` (number of trees in the forest):** We tested values to find the right balance between model complexity and performance. The best value was **100**.  
+- **`n_estimators` (number of trees in the forest):** We tested values to find the right balance between model complexity and performance. The best value was **50**.  
 - **`max_depth` (maximum depth of each tree):** A deeper tree can capture more patterns but may overfit. We found **10** to be the best balance.  
 - **`min_samples_split` (minimum samples required to split a node):** This controls how deep the tree grows. We found **2** worked best.  
-- **`min_samples_leaf` (minimum samples required at a leaf node):** This prevents the model from overfitting to small patterns. The best value was **2**.  
+- **`min_samples_leaf` (minimum samples required at a leaf node):** This prevents the model from overfitting to small patterns. The best value was **4**.  
 
 We selected these values by running GridSearchCV with **cross-validation (`cv=3`)**, meaning the model was tested on different subsets of the training data to ensure the best parameters were chosen fairly.  
 
 #### Did the Final Model Improve Over the Baseline? 
-Yes! Our final model performed **better than the baseline model** in every key metric.  
+Yes! Our final model performed **better than the baseline model** in accuracy.  
 
 | Metric            | Baseline Model | Final Model | Improvement |
 |------------------|---------------|-------------|-------------|
-| **Accuracy**      | 53.57%        | **58.92%**  | +5.35%      |
-| **Macro F1-Score** | 0.43          | **0.51**    | +0.08       |
-| **Weighted F1-Score** | 0.52      | **0.57**    | +0.05       |
+| **Accuracy**      | 53.42%        | **56.35%**  | +2.93%      |
+| **Macro F1-Score** | 0.45          | **0.43**    | -0.02       |
+| **Weighted F1-Score** | 0.52      | **0.51**    | -0.01       |
 
 
 This improvement means that our model is now better at correctly predicting the **severity level of an outage**, particularly for **underrepresented categories like Moderate and Long outages**. The addition of new features helped the model recognize patterns it previously missed, while hyperparameter tuning ensured that it wasn’t overfitting or underfitting.  
