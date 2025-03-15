@@ -49,23 +49,21 @@ Power outages can seriously affect public safety, economic output, and disaster 
 
 ## **Data Cleaning and Exploratory Data Analysis**
 
-### Steps of Data Cleaning
-
 ### **Data Cleaning and Preparation**
 
-#### **1. Removing Unnecessary Columns and Rows**
+#### 1. Removing Unnecessary Columns and Rows
 We began by reading the dataset from a CSV file and identifying unnecessary columns and rows that did not contribute to the analysis. The first column was removed as it contained index-like values, and the first four rows were dropped since they contained metadata rather than actual observations. After renaming the columns using the first row of valid data, two additional rows were removed to ensure a clean structure. Finally, the index was reset to maintain a properly formatted DataFrame.
 
-#### **2. Cleaning and Converting Numerical Columns**
+#### 2. Cleaning and Converting Numerical Columns
 Next, we addressed numerical columns that were stored as strings. Certain columns contained numeric values formatted with commas or spaces, which needed to be cleaned before analysis. To ensure consistency, we stripped unnecessary spaces, removed commas, and converted these columns to numeric values using `pd.to_numeric()`. This transformation allowed for smooth calculations, visualizations, and further statistical analysis.
 
-#### **3. Selecting Relevant Features**
+#### 3. Selecting Relevant Features
 Once the data was structured correctly, we selected the most relevant columns for the study. The dataset was filtered to retain key attributes related to environmental, economic, and outage-related factors. This included general information such as `YEAR`, `MONTH`, and `U.S._STATE`, as well as climate-related variables like `CLIMATE.REGION`, `ANOMALY.LEVEL`, and `CLIMATE.CATEGORY`. Outage event details such as `OUTAGE.DURATION`, `CUSTOMERS.AFFECTED`, and `DEMAND.LOSS.MW` were preserved, along with economic indicators and urbanization metrics.
 
-#### **4. Handling Missing Values**
+#### 4. Handling Missing Values
 Handling missing values was a critical step in the cleaning process. Zero values in key columns, including `OUTAGE.DURATION`, `CUSTOMERS.AFFECTED`, and `DEMAND.LOSS.MW`, were replaced with `NaN` to indicate missing data more effectively. Numeric columns were also converted to ensure proper data types, and missing values in climate and economic data (`ANOMALY.LEVEL`, `PC.REALGSP.STATE`, and `TOTAL.PRICE`) were filled using median imputation to maintain a balanced dataset.
 
-#### **5. Feature Engineering**
+#### 5. Feature Engineering
 To enhance the dataset further, we created two new features that improved interpretability and provided deeper insights:
 
 - **Outage Duration in Hours**: Since `OUTAGE.DURATION` was originally recorded in minutes, we converted it to hours for better analysis. A new column, `OUTAGE.DURATION_HOURS`, was created by dividing the original values by 60. This made it easier to compare outage durations across different locations.
@@ -113,7 +111,7 @@ The plot below shows the relationship between outage duration and cause category
 
 ### Interesting Aggregates
 
-### 1. Outage Duration by Climate Category  
+#### 1. Outage Duration by Climate Category  
 One way to explore this data is by grouping outages based on their climate category (cold, warm, normal) and calculating the average outage duration. This helps us determine if climate plays a role in how long outages last.  
 
 
@@ -134,13 +132,13 @@ One way to explore this data is by grouping outages based on their climate categ
 
 
 
-### Explanation  
+#### Explanation  
 From this table, we can see how climate conditions correlate with average outage duration. If cold climates have significantly longer outages than warm climates, it could suggest that extreme winter conditions make it harder to restore power.  
 
 
 <br>
 
-### 2. Outage Duration and Demand Loss by NERC Region  
+#### 2. Outage Duration and Demand Loss by NERC Region  
 Next, we explore NERC Regions (North American Electric Reliability Corporation regions), which are responsible for grid reliability across different parts of the country. We calculate the mean outage duration and demand loss (in megawatts) per region. 
 
 
@@ -155,12 +153,12 @@ Next, we explore NERC Regions (North American Electric Reliability Corporation r
 
 
 
-### Explanation  
+#### Explanation  
 This table reveals which regions tend to have longer outages and higher demand losses. For example, if some regions experience much longer outages than others, this could indicate differences in infrastructure resilience, emergency response efficiency, or climate conditions.  
 
 <br>
 
-### 3. Cause of Outages by Climate Category  
+#### 3. Cause of Outages by Climate Category  
 Finally, we analyze outage causes across climate categories. We create a pivot table that shows the average impact of different outage causes (e.g., equipment failure, severe weather, intentional attack, etc.) in each climate type.  
 
 
@@ -175,7 +173,7 @@ Finally, we analyze outage causes across climate categories. We create a pivot t
 
 
 
-### Explanation  
+#### Explanation  
 This table helps us understand what causes the most severe outages in each climate type. If severe weather is the biggest factor in cold climates, while equipment failure dominates warm climates, it suggests different mitigation strategies might be needed for different regions.  
 
 
@@ -194,7 +192,7 @@ To figure out if something else is causing this pattern, we’d need more data. 
 
 In this section, we analyzed the missingness dependency of the **CUSTOMERS.AFFECTED** column on the **ANOMALY.LEVEL** and **OUTAGE.DURATION_HOURS** columns.
 
-## ANOMALY.LEVEL
+#### ANOMALY.LEVEL
 
 First, let’s look at the distribution of **ANOMALY.LEVEL** when **CUSTOMERS.AFFECTED** is missing versus not missing.
 
@@ -211,7 +209,7 @@ First, let’s look at the distribution of **ANOMALY.LEVEL** when **CUSTOMERS.AF
   frameborder="0"
 ></iframe>
 
-### Results
+##### Results
 
 - **Observed Test Statistic:** 0.0484  
 - **P-value:** After performing 10,000 permutations, we got a p-value of **0.2098**.  
@@ -227,7 +225,7 @@ First, let’s look at the distribution of **ANOMALY.LEVEL** when **CUSTOMERS.AF
 
 ---
 
-## OUTAGE.DURATION_HOURS
+#### OUTAGE.DURATION_HOURS
 
 First, let’s look at the distribution of **OUTAGE.DURATION_HOURS** when **CUSTOMERS.AFFECTED** is missing versus not missing.
 
@@ -244,7 +242,7 @@ First, let’s look at the distribution of **OUTAGE.DURATION_HOURS** when **CUST
   frameborder="0"
 ></iframe>
 
-### Results
+##### Results
 
 - **Observed Test Statistic:** 24.12  
 - **P-value:** After performing 10,000 permutations, we got a p-value of **0.0**.  
@@ -272,14 +270,14 @@ In this analysis, we explore whether power outages tend to last longer in **cold
 
 ### How did we test this?
 
-To see if outage durations are actually different across climate conditions or just random chance, we ran a **permutation test with 1,000 simulations**. This test helps us figure out whether the differences we see in outage duration between climates are meaningful or just happen by luck.
+To see if outage durations are actually different across climate conditions or just random chance, we ran a **permutation test with 10,000 simulations**. This test helps us figure out whether the differences we see in outage duration between climates are meaningful or just happen by luck.
 
 We used the difference in mean outage durations between cold and warm climates as our test statistic. We set our significance level (α) at 0.05, which means that if there's less than a 5% chance of seeing our result just by random chance, we'll reject the idea that climate has no impact on outage duration.
 
 ### Results
 
 - **Observed Difference in Means (Cold - Warm):** -2.6727
-- **P-value:** 0.6620
+- **P-value:** 0.6460
 
 The histogram below shows the distribution of simulated test statistics under the null hypothesis. The **red vertical line** represents the actual observed difference, while the **blue shaded area** highlights extreme values that contribute to the p-value.
 
@@ -323,23 +321,23 @@ The key to building a useful prediction model is ensuring that all the input fea
 
 ## **Baseline Model**
 
-#### **Model Description**
+#### Model Description
 For our baseline model, we developed a multiclass classification model to predict the severity of power outages. The response variable, **OUTAGE.CATEGORY**, categorizes outages into four severity levels: **Short, Moderate, Long, and Severe**. The model was implemented using a **Random Forest Classifier** within an **sklearn pipeline** to streamline preprocessing and training.
 
-#### **Features Used**
+#### Features Used
 Our model utilizes both **quantitative** and **categorical** features to make predictions.
 
-##### **Quantitative Features:**
+##### Quantitative Features:
 - **CUSTOMERS.AFFECTED** (numerical): The number of customers impacted by the outage.
 - **PC.REALGSP.STATE** (numerical): The per capita real gross state product, representing economic activity.
 - **URBANIZATION** (numerical, derived feature): The level of urbanization, calculated as the mean of three urbanization metrics.
 
-##### **Categorical Features:**
+##### Categorical Features:
 - **CAUSE.CATEGORY** (nominal, one-hot encoded): The high-level category explaining why the outage occurred (e.g., severe weather, equipment failure).
 - **NERC.REGION** (nominal, one-hot encoded): The North American Electric Reliability Corporation (NERC) region where the outage took place.
 - **CLIMATE.CATEGORY** (nominal, one-hot encoded): The climate classification (cold, warm, or normal) of the region affected by the outage.
 
-#### **Feature Engineering**
+#### Feature Engineering
 - **One-hot encoding** was applied to categorical variables (**CAUSE.CATEGORY, NERC.REGION, and CLIMATE.CATEGORY**) to transform them into a format suitable for machine learning models.
 - **Missing values** in numeric features were imputed using the median value, while categorical features were filled with a placeholder category ("missing").
 - **Scaling** was performed on numerical features using **StandardScaler** to normalize them before model training.
@@ -362,17 +360,17 @@ Overall, this baseline model is not very strong. While it shows some success in 
 ## **Final Model**
 
 
-#### **Feature Engineering: Why We Added New Features**  
+#### Feature Engineering
 To help our model better predict power outage severity, we added two new features that highlight important patterns in the data.
 
 One of the biggest changes we made was applying a log transformation to the **CUSTOMERS.AFFECTED** column. Outages can impact anywhere from a few hundred to millions of people, and this huge difference makes it harder for the model to learn effectively. Without adjustments, really large values could dominate the model, making it less accurate overall. By using a log transformation, we scaled down extreme values while still keeping smaller values meaningful, helping the model recognize patterns without getting thrown off by really large numbers.
 
 We also added polynomial features for **PC.REALGSP.STATE**, which represents a state’s economic activity. A state's economy might play a role in how quickly power is restored—richer states might have better infrastructure and emergency response, while lower-income areas might struggle with longer outages. By adding **quadratic terms**, we gave the model a chance to capture more complex patterns in the data, making it better at predicting outage duration based on economic conditions..  
 
-#### **Modeling Approach and Why We Used It**  
+#### Modeling Approach and Why We Used It
 We decided to stick with the **Random Forest Classifier** as our final model because it performed well in our baseline tests and works great with both numerical and categorical data. To make sure all the preprocessing steps were applied correctly, we used an **sklearn pipeline**. This helped us handle things like feature transformations, scaling, and encoding in a way that kept everything consistent and avoided data leakage. By setting it up this way, we made sure the model always gets properly processed data whenever it’s trained. 
 
-#### **Hyperparameter Tuning: How We Optimized the Model**  
+#### Hyperparameter Tuning
 To make our final model as effective as possible, we used **GridSearchCV** to systematically test different values for key hyperparameters. These included:  
 
 - **`n_estimators` (number of trees in the forest):** We tested values to find the right balance between model complexity and performance. The best value was **100**.  
@@ -394,7 +392,7 @@ Our final model performed **better than the baseline model** in every key metric
 
 This improvement means that our model is now better at correctly predicting the **severity level of an outage**, particularly for **underrepresented categories like Moderate and Long outages**. The addition of new features helped the model recognize patterns it previously missed, while hyperparameter tuning ensured that it wasn’t overfitting or underfitting.  
 
-#### **Why the Final Model Improved**  
+#### Why the Final Model Improved
 The **log transformation on `CUSTOMERS.AFFECTED`** helped the model **handle extreme values** more effectively, making it easier to generalize across different types of outages. The **polynomial transformation of `PC.REALGSP.STATE`** allowed the model to capture **nonlinear relationships** between economic factors and outage duration. Finally, fine-tuning our hyperparameters ensured that our Random Forest Classifier was **optimized for performance**, leading to a more reliable model overall.  
 
 ---
@@ -411,7 +409,7 @@ To better understand how our model is making predictions, we use a **confusion m
 
 ## **Fairness Analysis**
 
-## Group Definitions
+### Group Definitions
 To evaluate the fairness of our power outage prediction model, we examined whether its performance differs based on urbanization levels. We defined two groups:
 
 - **Group X (High Urbanization):** Outages occurring in states where more than 75% of the population lives in urban areas.
@@ -419,28 +417,28 @@ To evaluate the fairness of our power outage prediction model, we examined wheth
 
 We chose urbanization as a fairness criterion because infrastructure in highly urbanized areas is expected to be more resilient due to better maintenance and resource allocation. If the model is biased, it might perform worse in rural areas where outages tend to be longer and more severe.
 
-## Evaluation Metric
+### Evaluation Metric
 We used **accuracy** as the evaluation metric, as our model predicts the duration severity of power outages, making accuracy a natural choice to measure its correctness across different groups.
 
-## Hypotheses
+### Hypotheses
 - **Null Hypothesis (H₀):** The model is fair, meaning its accuracy for states with high and low urbanization is roughly the same, and any observed differences are due to random chance.
 - **Alternative Hypothesis (H₁):** The model is unfair, meaning its accuracy for states with low urbanization is significantly lower than for states with high urbanization.
 
-## Test Statistic
+### Test Statistic
 The test statistic used in this analysis is the **difference in accuracy** between Group X (high urbanization) and Group Y (low urbanization).
 
-## Significance Level
+### Significance Level
 We set the significance level at **0.05**.
 
-## Results
+### Results
 - **Observed Test Statistic:** The observed difference in mean prediction accuracy between the two groups was **-0.122**, indicating that the model performed slightly worse for low-urbanization states.
 - **p-value:** After conducting a permutation test with **10,000 iterations**, we obtained a p-value of **0.3928**.
 
-## Conclusion
+### Conclusion
 - **Decision:** Since the p-value (**0.3928**) is greater than the significance level (**0.05**), we **fail to reject the null hypothesis**.
 - **Interpretation:** This result suggests that any observed differences in accuracy between high-urbanization areas (Group X) and low-urbanization areas (Group Y) are likely due to random chance. Therefore, we do not have strong evidence to conclude that the model is unfair with respect to urbanization levels.
 
-The histogram below illustrates the distribution of test statistics obtained from the permutation test. The red dashed line represents the observed test statistic of **-0.122**, showing that it falls well within the range of random variations.
+The histogram below illustrates the distribution of test statistics obtained from the permutation test. The red dashed line represents the observed test statistic of **-0.037**, showing that it falls well within the range of random variations.
 
 <iframe
   src="assets/parabola_fairness.html"
