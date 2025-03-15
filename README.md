@@ -209,7 +209,7 @@ First, let’s look at the distribution of **ANOMALY.LEVEL** when **CUSTOMERS.AF
   frameborder="0"
 ></iframe>
 
-##### Results
+#### Results
 
 - **Observed Test Statistic:** 0.0484  
 - **P-value:** After performing 10,000 permutations, we got a p-value of **0.2098**.  
@@ -242,7 +242,7 @@ First, let’s look at the distribution of **OUTAGE.DURATION_HOURS** when **CUST
   frameborder="0"
 ></iframe>
 
-##### Results
+#### Results
 
 - **Observed Test Statistic:** 24.12  
 - **P-value:** After performing 10,000 permutations, we got a p-value of **0.0**.  
