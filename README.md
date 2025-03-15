@@ -325,7 +325,6 @@ Overall, this baseline model is not very strong. While it shows some success in 
 
 ## Final Model
 
-### **Final Model Write-Up**  
 
 #### **Feature Engineering: Why We Added New Features**  
 To improve our model’s ability to predict power outage severity, we introduced two new features that help capture meaningful patterns in the data.  
@@ -374,7 +373,7 @@ To better understand how our model is making predictions, we use a **confusion m
   frameborder="0"
 ></iframe>
 
-## **Fairness Analysis**
+# **Fairness Analysis**
 
 ## Group Definitions
 To evaluate the fairness of our power outage prediction model, we examined whether its performance differs based on urbanization levels. We defined two groups:
