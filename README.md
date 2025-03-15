@@ -272,9 +272,9 @@ In this analysis, we explore whether power outages tend to last longer in **cold
 
 ### How did we test this?
 
-To compare outage durations across climate conditions, we used a **permutation test** with **1,000 simulations**. This approach helps determine whether any observed differences in outage duration happened due to random chance or if they are statistically significant.
+To see if outage durations are actually different across climate conditions or just random chance, we ran a **permutation test with 1,000 simulations**. This test helps us figure out whether the differences we see in outage duration between climates are meaningful or just happen by luck.
 
-We calculated the **test statistic**, which is the **difference in mean outage durations** between cold and warm climate groups. We set our **significance level (α) at 0.05**, meaning that if the probability of obtaining our observed result under the null hypothesis is less than 5%, we will reject the null hypothesis.
+We used the difference in mean outage durations between cold and warm climates as our test statistic. We set our significance level (α) at 0.05, which means that if there's less than a 5% chance of seeing our result just by random chance, we'll reject the idea that climate has no impact on outage duration.
 
 ### Results
 
