@@ -5,7 +5,7 @@ Authors: Lakshmi Manasa Maddi and Rakshan Patnaik
 ![App Screenshot](assets/nationalpowerpredict.png) <!-- replace with actual path if you want to show a screenshot -->
 
 
-## 🎥 Live Website
+## 🎥 Live Website (Includes all Cleaning/Analysis/Visualizations/Conclusion):
 [National Power Outage Duration Predictor](https://manasamaddi05.github.io/National-Power-Outage-Duration-Predictor/)
 
 
