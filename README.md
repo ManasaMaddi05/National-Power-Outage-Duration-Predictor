@@ -3,7 +3,7 @@
 Authors: Lakshmi Manasa Maddi and Rakshan Patnaik
 
 ## 🎥 Live Website
-[National Power Outage Duration Predictor:](https://manasamaddi05.github.io/National-Power-Outage-Duration-Predictor/)
+[National Power Outage Duration Predictor](https://manasamaddi05.github.io/National-Power-Outage-Duration-Predictor/)
 
 
 ## **Introduction**
